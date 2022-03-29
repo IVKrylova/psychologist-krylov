@@ -4,12 +4,12 @@ import myPhoto from '../images/photo-krylov.png';
 import educationDiploma from '../images/edc-1.jpg';
 import educationBrc from '../images/edc-2.jpg';
 import educationWopsaDiagnostic from '../images/edc-3.jpg';
-import educationIgkbDependencies from '../images/edc-4.jpg';
-import educationIgkbDiagnostic from '../images/edc-5.jpg';
+import educationIgkbDependencies from '../images/edc-4.png';
+import educationIgkbDiagnostic from '../images/edc-5.png';
 import educationFsp from '../images/edc-6.jpg';
 import educationImatonTraining from '../images/edc-7.jpg';
 import educationImatonSummitXIII from '../images/edc-8.jpg';
-import educationConferenceMes from '../images/edc-9.jpg';
+import educationConferenceMes from '../images/edc-9.png';
 import educationWopsaDependencies from '../images/edc-10.jpg';
 import educationWopsaIntro from '../images/edc-11.jpg';
 import educationAcademyMes from '../images/edc-12.jpg';
@@ -31,12 +31,12 @@ import iconDesease from '../images/icon-desease.svg';
 import iconLossControl from '../images/icon-loss-control.svg';
 import iconSenselessness from '../images/icon-senselessness.svg';
 import iconSelfRealization from '../images/icon-self-realization.svg';
-import iconDependencies from '../images/icon-self-dependencies.svg';
+import iconDependencies from '../images/icon-dependencies.svg';
 
 // icon section contacts
-import iconPhone from './images/phone.svg';
-import iconEmail from './images/email.svg';
-import iconSkype from './images/skype.svg';
+import iconPhone from '../images/phone.svg';
+import iconEmail from '../images/email.svg';
+import iconSkype from '../images/skype.svg';
 
 function Main() {
   return (
@@ -245,13 +245,13 @@ function Main() {
           <fieldset className="form__fieldset" name="type">
             <legend className="form__legend">Формат консультации</legend>
             <input className="form__input-radio" type="radio" name="type" id="office" value="office" />
-            <label for="office">Очно</label>
+            <label htmlFor="office">Очно</label>
             <input className="form__input-radio" type="radio" name="type" id="skype" value="skype" />
-            <label for="skype">Skype</label>
+            <label htmlFor="skype">Skype</label>
           </fieldset>
           <fieldset className="form__fieldset" name="agreement">
             <input className="form__input-checkbox" type="checkbox" id="agreement" required />
-            <label for="agreement">Отправляя сообщение, я даю согласие на обработку своих персональных данных и подтверждаю, что ознакомлен(а)
+            <label htmlFor="agreement">Отправляя сообщение, я даю согласие на обработку своих персональных данных и подтверждаю, что ознакомлен(а)
               с Политикой конфиденциальности</label>
           </fieldset>
           <button className="button form__button" type="submit">Записаться</button>
