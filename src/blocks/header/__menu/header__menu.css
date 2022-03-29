@@ -1,0 +1,30 @@
+.header__menu {
+  grid-area: header__menu;
+  margin: 50px 4%;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.17;
+}
+
+@media screen and (max-width: 990px) {
+  .header__menu {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .header__menu {
+    display: none;
+    justify-self: start;
+    margin-top: 0;
+    margin-left: 0;
+    position: absolute;
+    width: 50%;
+    background-color: #151740;
+    box-sizing: border-box;
+    border: 1px solid #151740;
+  }
+}

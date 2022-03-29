@@ -1,0 +1,18 @@
+.header__icon {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 990px) {
+  .header__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .header__icon {
+    width: 18px;
+    height: 18px;
+  }
+}

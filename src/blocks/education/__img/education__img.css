@@ -1,0 +1,23 @@
+.education__img {
+  display: block;
+  object-fit: contain;
+  width: 250px;
+}
+
+@media screen and (max-width: 900px) {
+  .education__img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .education__img {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .education__img {
+    width: 200px;
+  }
+}

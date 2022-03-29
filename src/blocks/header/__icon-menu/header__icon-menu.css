@@ -1,0 +1,19 @@
+.header__icon-menu {
+  display: none;
+}
+
+@media screen and (max-width: 660px) {
+  .header__icon-menu {
+    display: block;
+    grid-area: header__icon-menu;
+    margin: 20px 0 0 8%;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .header__icon-menu {
+    margin-left: 25%;
+  }
+}

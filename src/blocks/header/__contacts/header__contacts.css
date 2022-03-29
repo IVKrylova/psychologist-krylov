@@ -1,0 +1,15 @@
+.header__contacts {
+  grid-area: header__contacts;
+  list-style-type: none;
+  display: flex;
+  margin: 32px 8% 0 auto;
+  padding: 0;
+  column-gap: 19px;
+}
+
+@media screen and (max-width: 990px) {
+  .header__contacts {
+    margin-top: 20px;
+    column-gap: 15px;
+  }
+}

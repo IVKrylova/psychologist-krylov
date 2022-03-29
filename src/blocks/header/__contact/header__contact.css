@@ -1,0 +1,25 @@
+.header__contact {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1.72;
+}
+
+.header__contact:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 990px) {
+  .header__contact {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .header__contact {
+    font-size: 18px;
+  }
+}

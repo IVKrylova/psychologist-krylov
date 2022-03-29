@@ -1,0 +1,5 @@
+.price {
+  background-color: #7D8BA2;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,25 @@
+.education__documents {
+  margin: 0 8%;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 50px;
+  justify-items: center;
+  row-gap: 80px;
+}
+
+@media screen and (max-width: 990px) {
+  .education__documents {
+    margin: 0 4%;
+    column-gap: 30px;
+    row-gap: 40px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .education__documents {
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+  }
+}

@@ -1,0 +1,9 @@
+.education__document {
+  margin-top: -32px;
+}
+
+@media screen and (max-width: 580px) {
+  .education__document {
+    margin-top: 30px;
+  }
+}

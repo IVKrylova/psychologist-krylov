@@ -1,0 +1,14 @@
+.footer__license {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #fff;
+  margin: 10px auto 0;
+}
+
+@media screen and (max-width: 700px) {
+  .footer__license {
+    font-size: 14px;
+  }
+}

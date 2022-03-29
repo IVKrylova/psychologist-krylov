@@ -1,0 +1,26 @@
+.about-me__photo {
+  width: 327px;
+  display: block;
+  /*height: 492px;*/
+  margin-right: 8%;
+  object-fit: cover;
+  grid-area: about-me__photo;
+}
+
+@media screen and (max-width: 990px) {
+  .about-me__photo {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .about-me__photo {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .about-me__photo {
+    justify-self: center;
+  }
+}

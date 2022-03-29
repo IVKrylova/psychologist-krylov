@@ -1,0 +1,16 @@
+.header__menu-items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 13fr 28fr 25fr 17fr 17fr;
+  text-align: center;
+}
+
+@media screen and (max-width: 660px) {
+  .header__menu-items {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    margin-left: 8%;
+  }
+}

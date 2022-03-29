@@ -1,0 +1,68 @@
+.button {
+  box-sizing: border-box;
+  background-color: transparent;
+  width: 245px;
+  color: #c4c4c4;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.17;
+  display: block;
+  position: relative;
+}
+
+.button:before, .button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+.button:before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid #f4f4f4;
+  border-top: 1px solid #f4f4f4;
+  transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+
+.button:after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid #f4f4f4;
+  border-bottom: 1px solid #f4f4f4;
+  transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+}
+
+.button:hover:before,
+.button:hover:after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+.button:hover:before {
+  transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+
+.button:hover:after {
+  transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+@media screen and (max-width: 990px) {
+  .button {
+    font-size: 16px;
+    padding: 15px 0;
+    width: 200px;
+  }
+}
+

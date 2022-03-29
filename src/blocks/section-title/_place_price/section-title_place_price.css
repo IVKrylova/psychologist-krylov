@@ -1,0 +1,10 @@
+.section-title_place_price {
+  margin-top: 130px;
+  align-self: center;
+}
+
+@media screen and (max-width: 850px) {
+  .section-title_place_price {
+    margin-top: 50px;
+  }
+}

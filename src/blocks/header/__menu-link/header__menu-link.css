@@ -1,0 +1,9 @@
+.header__menu-link {
+  color: #969696;
+  text-decoration: none;
+}
+
+.header__menu-link:hover {
+  color: #fff;
+  cursor: pointer;
+}
