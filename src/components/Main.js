@@ -1,4 +1,6 @@
+import React from 'react';
 import myPhoto from '../images/photo-krylov.png';
+import Problem from '../components/Problem';
 
 // img section education
 import educationDiploma from '../images/edc-1.jpg';
@@ -19,7 +21,7 @@ import educationWopsaPhenomenologyI from '../images/edc-15.jpg';
 import educationWopsaPhenomenologyIIPI from '../images/edc-16.jpg';
 import educationWopsaPhenomenologyIII from '../images/edc-17.jpg';
 
-// img section problems
+/* // img section problems
 import iconRelationship from '../images/icon-relationship.svg';
 import iconDepression from '../images/icon-depression.svg';
 import iconLaziness from '../images/icon-laziness.svg';
@@ -31,14 +33,14 @@ import iconDesease from '../images/icon-desease.svg';
 import iconLossControl from '../images/icon-loss-control.svg';
 import iconSenselessness from '../images/icon-senselessness.svg';
 import iconSelfRealization from '../images/icon-self-realization.svg';
-import iconDependencies from '../images/icon-dependencies.svg';
+import iconDependencies from '../images/icon-dependencies.svg'; */
 
 // icon section contacts
 import iconPhone from '../images/phone.svg';
 import iconEmail from '../images/email.svg';
 import iconSkype from '../images/skype.svg';
 
-function Main() {
+function Main(props) {
   return (
     <main className="content">
       <section className="about-me">
@@ -121,7 +123,7 @@ function Main() {
             происходящих в жизни событий, и соответственно, проблема может проявиться в самых разных формах</p>
         </div>
         <ul className="problems__list">
-          <li className="problems__item">
+       {/*    <li className="problems__item">
             <img src={iconRelationship} alt="Отношения с окружающими" className="problems__icon" />
             <h3 className="item-title problems__title">Отношения с окружающими</h3>
             <p className="item-text">Непонимание и неудовлетворенность в личных отношениях с партнером или супругом,
@@ -200,7 +202,14 @@ function Main() {
             <h3 className="item-title problems__title">Ограничения самореализации</h3>
             <p className="item-text">Неумение ставить цели, невыполнение поставленных перед собой задач, сомнения, затрудняющие осуществление
               выбора и принятие решений, ощущение собственной беспомощности и восприятие сложившейся ситуации как безвыходной</p>
-          </li>
+          </li> */}
+          {props.problems.map(problem => {
+            return (
+              <Problem img={problem.img}
+                      text={problem.text}
+                      title={problem.title} />
+            );
+          })}
         </ul>
       </section>
       <section className="work-format">
