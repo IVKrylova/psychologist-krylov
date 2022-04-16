@@ -3,7 +3,7 @@ import myPhoto from '../images/photo-krylov.png';
 
 function AboutMe() {
   return (
-    <section className="about-me">
+    <section className="about-me" id="about-me">
       <div className="about-me__description">
         <p className="about-me__text">Меня зовут Алексей Крылов. Я являюсь практикующим психологом:
           провожу индивидуальные психологические консультации и

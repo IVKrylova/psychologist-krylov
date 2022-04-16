@@ -2,7 +2,7 @@ import React from "react";
 
 function WorkFormat() {
   return (
-    <section className="work-format">
+    <section className="work-format" id="work-format">
       <h2 className="section-title section-title_place_work-format">Формат работы</h2>
       <ul className="work-format__list">
         <li className="work-format__item">

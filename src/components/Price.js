@@ -2,7 +2,7 @@ import React from "react";
 
 function Price() {
   return (
-    <section className="price">
+    <section className="price" id="price">
       <h2 className="section-title section-title_place_price">Стоимость</h2>
       <ul className="price__button-list">
         <li>

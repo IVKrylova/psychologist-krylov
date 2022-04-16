@@ -1,6 +1,5 @@
+import React from 'react';
 import iconSkype from '../images/skype.svg';
-import iconMenu from '../images/header-menu.png';
-import buttonClose from '../images/button-close.svg';
 
 function Header() {
   return (
@@ -24,27 +23,6 @@ function Header() {
           </a>
         </li>
       </ul>
-      <nav className="header__menu">
-        <ul className="header__menu-items">
-          <li className="header__menu-item">
-            <a href="#" className="header__menu-link">Кто я?</a>
-          </li>
-          <li className="header__menu-item">
-            <a href="#" className="header__menu-link">Решение проблем</a>
-          </li>
-          <li className="header__menu-item">
-            <a href="#" className="header__menu-link">Формат работы</a>
-          </li>
-          <li className="header__menu-item">
-            <a href="#" className="header__menu-link">Стоимость</a>
-          </li>
-          <li className="header__menu-item">
-            <a href="#" className="header__menu-link">Контакты</a>
-          </li>
-        </ul>
-      </nav>
-      <img src={iconMenu} alt="иконка меню" className="header__icon-menu" />
-      <img src={buttonClose} alt="кнопка закрыть" className="header__icon-menu header__icon-menu_invisible" />
     </header>
   );
 }

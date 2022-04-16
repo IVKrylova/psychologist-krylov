@@ -1,7 +1,6 @@
 .about-me__photo {
   width: 327px;
   display: block;
-  /*height: 492px;*/
   margin-right: 8%;
   object-fit: cover;
   grid-area: about-me__photo;

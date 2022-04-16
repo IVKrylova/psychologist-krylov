@@ -12,14 +12,17 @@
 @import url(./blocks/header/__contacts/header__contacts.css);
 @import url(./blocks/header/__contact/header__contact.css);
 @import url(./blocks/header/__icon/header__icon.css);
-@import url(./blocks/header/__menu/header__menu.css);
-@import url(./blocks/header/__menu/_visible/header__menu_visible.css);
-@import url(./blocks/header/__menu-item/header__menu-item.css);
-@import url(./blocks/header/__menu-items/header__menu-items.css);
-@import url(./blocks/header/__menu-link/header__menu-link.css);
-@import url(./blocks/header/__menu-link/_activ/header__menu-link_activ.css);
-@import url(./blocks/header/__icon-menu/header__icon-menu.css);
-@import url(./blocks/header/__icon-menu/_invisible/header__icon-menu_invisible.css);
+
+@import url(./blocks/menu/menu.css);
+@import url(./blocks/menu/_visible/menu_visible.css);
+@import url(./blocks/menu/__items/menu__items.css);
+@import url(./blocks/menu/__item/menu__item.css);
+@import url(./blocks/menu/__link/menu__link.css);
+@import url(./blocks/menu/__link/_activ/menu__link_activ.css);
+
+@import url(./blocks/nav-menu/nav-menu.css);
+@import url(./blocks/nav-menu/__icon-menu/nav-menu__icon-menu.css);
+@import url(./blocks/nav-menu/__icon-menu/_invisible/nav-menu__icon-menu_invisible.css);
 
 @import url(./blocks/content/content.css);
 

@@ -11,7 +11,7 @@ function Main(props) {
   return (
     <main className="content">
       <AboutMe />
-      <section className="education">
+      <section className="education" id="education">
         <ul className="education__documents">
           {props.diplomas.map(diploma => {
             return (
@@ -22,7 +22,7 @@ function Main(props) {
         </ul>
         <button className="button education__button" type="button">Больше об образовании</button>
       </section>
-      <section className="problems">
+      <section className="problems" id="problems">
         <div className="problems__intro">
           <h2 className="section-title section-title_place_problems">Решение проблем</h2>
           <p className="problems__description">При встрече с проблемой мы испытываем дискомфорт или даже страдание. Проблема возникает тогда, когда наши
@@ -43,7 +43,7 @@ function Main(props) {
       </section>
       <WorkFormat />
       <Price />
-      <section className="appointment">
+      <section className="appointment" id="appointment">
         <h2 className="section-title section-title_place_appointment">Записаться на консультацию</h2>
         <Form />
       </section>

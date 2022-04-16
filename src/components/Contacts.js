@@ -5,7 +5,7 @@ import iconSkype from '../images/skype.svg';
 
 function Contacts() {
   return (
-    <section className="contacts">
+    <section className="contacts" id="contacts">
       <h2 className="section-title section-title_place_contacts">Контакты</h2>
       <ul className="contacts__list">
         <li>

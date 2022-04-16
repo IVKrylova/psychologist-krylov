@@ -1,9 +1,9 @@
-.header__icon-menu {
+.nav-menu__icon-menu {
   display: none;
 }
 
 @media screen and (max-width: 660px) {
-  .header__icon-menu {
+  .nav-menu__icon-menu {
     display: block;
     grid-area: header__icon-menu;
     margin: 20px 0 0 8%;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width: 525px) {
-  .header__icon-menu {
+  .nav-menu__icon-menu {
     margin-left: 25%;
   }
 }

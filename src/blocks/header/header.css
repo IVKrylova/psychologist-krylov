@@ -6,15 +6,13 @@
   flex-direction: column;
   color: #fff;
   grid-template-areas: 'header__lang-links header__lang-links'
-                       'header__title header__contacts'
-                       'header__menu header__menu';
+                       'header__title header__contacts';
 }
 
 @media screen and (max-width: 660px) {
   .header {
     grid-template-areas: 'header__title header__lang-links'
-                         'header__icon-menu header__contacts'
-                         'header__menu header__menu';
+                         'header__icon-menu header__contacts';
   }
 }
 
@@ -22,7 +20,6 @@
   .header {
     grid-template-areas: 'header__lang-links header__lang-links'
                          'header__title header__title'
-                         'header__icon-menu header__contacts'
-                         'header__menu header__menu';
+                         'header__icon-menu header__contacts';
   }
 }

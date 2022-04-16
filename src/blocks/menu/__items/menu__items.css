@@ -1,4 +1,4 @@
-.header__menu-items {
+.menu__items {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: 660px) {
-  .header__menu-items {
+  .menu__items {
     grid-template-columns: 1fr;
     justify-items: start;
     margin-left: 8%;
