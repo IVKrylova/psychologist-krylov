@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -46,8 +46,20 @@ function App() {
     setIsWorkFormatFocused(false);
   }
 
+  function handleScroll() {
+    window.pageYOffset <= 200 && setIsAboutMeFocused(false);
+  }
+
+  // навешиваем обработчик на документ
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="site-background">
+    <div className="site-background" onScroll={handleScroll}>
       <div className="page">
         <Header />
         <NavMenu isMenuOpen={isMenuOpen}
