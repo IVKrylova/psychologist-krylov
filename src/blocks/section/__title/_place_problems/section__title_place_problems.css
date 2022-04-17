@@ -1,9 +1,9 @@
-.section-title_place_problems {
+.section__title_place_problems {
   margin-left: 40%;
 }
 
 @media screen and (max-width: 720px) {
-  .section-title_place_problems {
+  .section__title_place_problems {
     margin-left: 0;
     text-align: center;
   }

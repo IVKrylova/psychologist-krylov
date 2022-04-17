@@ -26,6 +26,14 @@
 
 @import url(./blocks/content/content.css);
 
+@import url(./blocks/section/__title/section__title.css);
+@import url(./blocks/section/__title/_place_appointment/section__title_place_appointment.css);
+@import url(./blocks/section/__title/_place_contacts/section__title_place_contacts.css);
+@import url(./blocks/section/__title/_place_price/section__title_place_price.css);
+@import url(./blocks/section/__title/_place_problems/section__title_place_problems.css);
+@import url(./blocks/section/__title/_place_work-format/section__title_place_work-format.css);
+@import url(./blocks/section/_focused/section_focused.css);
+
 @import url(./blocks/about-me/about-me.css);
 @import url(./blocks/about-me/__photo/about-me__photo.css);
 @import url(./blocks/about-me/__description/about-me__description.css);
@@ -42,8 +50,6 @@
 
 @import url(./blocks/problems/problems.css);
 @import url(./blocks/problems/__intro/problems__intro.css);
-@import url(./blocks/section-title/section-title.css);
-@import url(./blocks/section-title/_place_problems/section-title_place_problems.css);
 @import url(./blocks/problems/__description/problems__description.css);
 @import url(./blocks/problems/__list/problems__list.css);
 @import url(./blocks/problems/__item/problems__item.css);
@@ -53,7 +59,6 @@
 @import url(./blocks/item-text/item-text.css);
 
 @import url(./blocks/work-format/work-format.css);
-@import url(./blocks/section-title/_place_work-format/section-title_place_work-format.css);
 @import url(./blocks/work-format/__list/work-format__list.css);
 @import url(./blocks/work-format/__item/work-format__item.css);
 @import url(./blocks/work-format/__title/work-format__title.css);
@@ -61,11 +66,9 @@
 
 @import url(./blocks/price/price.css);
 @import url(./blocks/price/__button-list/price__button-list.css);
-@import url(./blocks/section-title/_place_price/section-title_place_price.css);
 @import url(./blocks/price/__discount/price__discount.css);
 
 @import url(./blocks/appointment/appointment.css);
-@import url(./blocks/section-title/_place_appointment/section-title_place_appointment.css);
 @import url(./blocks/form/form.css);
 @import url(./blocks/form/__input/form__input.css);
 @import url(./blocks/form/__fieldset/form__fieldset.css);
@@ -75,7 +78,6 @@
 @import url(./blocks/form/__button/form__button.css);
 
 @import url(./blocks/contacts/contacts.css);
-@import url(./blocks/section-title/_place_contacts/section-title_place_contacts.css);
 @import url(./blocks/contacts/__list/contacts__list.css);
 @import url(./blocks/contacts/__link/contacts__link.css);
 @import url(./blocks/contacts/__icon/contacts__icon.css);

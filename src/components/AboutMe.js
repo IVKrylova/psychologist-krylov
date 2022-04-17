@@ -1,9 +1,9 @@
 import React from "react";
 import myPhoto from '../images/photo-krylov.png';
 
-function AboutMe() {
+function AboutMe(props) {
   return (
-    <section className="about-me" id="about-me">
+    <section className={`section about-me ${props.isAboutMeFocused ? 'section_focused' : ''}`} id="about-me">
       <div className="about-me__description">
         <p className="about-me__text">Меня зовут Алексей Крылов. Я являюсь практикующим психологом:
           провожу индивидуальные психологические консультации и

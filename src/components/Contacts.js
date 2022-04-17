@@ -5,8 +5,8 @@ import iconSkype from '../images/skype.svg';
 
 function Contacts() {
   return (
-    <section className="contacts" id="contacts">
-      <h2 className="section-title section-title_place_contacts">Контакты</h2>
+    <section className="section contacts" id="contacts">
+      <h2 className="section__title section__title_place_contacts">Контакты</h2>
       <ul className="contacts__list">
         <li>
           <img src={iconPhone} alt="иконка телефон" className="contacts__icon" />

@@ -1,9 +1,9 @@
 import React from "react";
 
-function WorkFormat() {
+function WorkFormat(props) {
   return (
-    <section className="work-format" id="work-format">
-      <h2 className="section-title section-title_place_work-format">Формат работы</h2>
+    <section className={`section work-format ${props.isWorkFormatFocused ? 'section_focused' : ''}`} id="work-format">
+      <h2 className="section__title section__title_place_work-format">Формат работы</h2>
       <ul className="work-format__list">
         <li className="work-format__item">
           <h3 className="item-title work-format__title">Единичная консультация</h3>

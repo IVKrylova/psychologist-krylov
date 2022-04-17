@@ -2,8 +2,8 @@ import React from "react";
 
 function Price() {
   return (
-    <section className="price" id="price">
-      <h2 className="section-title section-title_place_price">Стоимость</h2>
+    <section className="section price" id="price">
+      <h2 className="section__title section__title_place_price">Стоимость</h2>
       <ul className="price__button-list">
         <li>
           <button type="button" className="button">Очная сессия 1500 руб.</button>
