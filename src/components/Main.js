@@ -16,7 +16,8 @@ function Main(props) {
           {props.diplomas.map(diploma => {
             return (
               <Diploma img={diploma.img}
-                title={diploma.title} />
+                title={diploma.title}
+                key={diploma.id} />
             );
           })}
         </ul>
@@ -36,7 +37,8 @@ function Main(props) {
             return (
               <Problem img={problem.img}
                 text={problem.text}
-                title={problem.title} />
+                title={problem.title}
+                key={problem.id} />
             );
           })}
         </ul>

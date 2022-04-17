@@ -14,39 +14,40 @@ function App() {
   const [isWorkFormatFocused, setIsWorkFormatFocused] = useState(false);
 
   // обработчик переключения меню
-  function handleToggleMenu() {
+  const handleToggleMenu = () => {
     isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
   }
 
   // обработчик изменения стилей при переходу к якорю AboutMe
-  function handleAddPaddingAboutMe() {
+  const handleAddPaddingAboutMe = () => {
     setIsAboutMeFocused(true);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
   }
 
   // обработчик изменения стилей при переходу к якорю Problems
-  function handleAddPaddingProblems() {
+  const handleAddPaddingProblems = () => {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(true);
     setIsWorkFormatFocused(false);
   }
 
   // обработчик изменения стилей при переходу к якорю WorkFormat
-  function handleAddPaddingWorkFormat() {
+  const handleAddPaddingWorkFormat = () => {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(true);
   }
 
    // обработчик изменения стилей при переходу к остальным якорям
-   function handleDeletePaddingAnchor() {
+  const handleDeletePaddingAnchor = () => {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
   }
 
-  function handleScroll() {
+  // обработчик изменения padding-top для AboutMe при скролле
+  const handleScroll = () => {
     window.pageYOffset <= 200 && setIsAboutMeFocused(false);
   }
 
