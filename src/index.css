@@ -63,6 +63,7 @@
 @import url(./blocks/work-format/__item/work-format__item.css);
 @import url(./blocks/work-format/__title/work-format__title.css);
 @import url(./blocks/work-format/__text/work-format__text.css);
+@import url(./blocks/work-format/__list/_focused/work-format__list_focused.css);
 
 @import url(./blocks/price/price.css);
 @import url(./blocks/price/__button-list/price__button-list.css);

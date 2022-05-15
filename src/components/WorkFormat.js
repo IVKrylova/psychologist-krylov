@@ -4,7 +4,7 @@ function WorkFormat(props) {
   return (
     <section className={`section work-format ${props.isWorkFormatFocused ? 'section_focused' : ''}`} id="work-format">
       <h2 className="section__title section__title_place_work-format">Формат работы</h2>
-      <ul className="work-format__list">
+      <ul className={`work-format__list ${props.isWorkFormatFocused ? 'work-format__list_focused' : ''}`}>
         <li className="work-format__item">
           <h3 className="item-title work-format__title">Единичная консультация</h3>
           <p className="item-text work-format__text">Диагностика проблемы и обозначение возможных направлений её решения, определение формата

@@ -1,3 +1,9 @@
 .section_focused {
   padding-top: 50px;
 }
+
+@media screen and (max-width: 1050px) {
+  .section_focused {
+    padding-top: 100px;
+  }
+}
