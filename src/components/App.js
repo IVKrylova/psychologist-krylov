@@ -12,6 +12,8 @@ function App() {
   const [isAboutMeFocused, setIsAboutMeFocused] = useState(false);
   const [isProblemsFocused, setIsProblemsFocused] = useState(false);
   const [isWorkFormatFocused, setIsWorkFormatFocused] = useState(false);
+  // стейты дипломов в блоке об образовании
+  const [isVisibleDiploma, setIsVisibleDiploma] = useState(false);
 
   // обработчик переключения меню
   const handleToggleMenu = () => {
@@ -55,6 +57,11 @@ function App() {
     window.pageYOffset <= 200 && setIsAboutMeFocused(false);
   }
 
+  // обработчик клика на кнопку "Больше об образовании"
+  const toggleButtonEducation = () => {
+    isVisibleDiploma ? setIsVisibleDiploma(false) : setIsVisibleDiploma(true);
+  }
+
   // навешиваем обработчик на документ
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -77,7 +84,9 @@ function App() {
           diplomas={diplomas}
           isAboutMeFocused={isAboutMeFocused}
           isProblemsFocused={isProblemsFocused}
-          isWorkFormatFocused={isWorkFormatFocused} />
+          isWorkFormatFocused={isWorkFormatFocused}
+          onClickButtonEducation={toggleButtonEducation}
+          isVisibleDiploma={isVisibleDiploma} />
         <Footer />
       </div>
     </div>

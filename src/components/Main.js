@@ -17,11 +17,17 @@ function Main(props) {
             return (
               <Diploma img={diploma.img}
                 title={diploma.title}
-                key={diploma.id} />
+                id={diploma.id}
+                key={diploma.id}
+                isVisibleDiploma={props.isVisibleDiploma} />
             );
           })}
         </ul>
-        <button className="button education__button" type="button">Больше об образовании</button>
+        <button className="button education__button"
+          onClick={props.onClickButtonEducation}
+          type="button">
+            {`${props.isVisibleDiploma ? 'Свернуть' : 'Больше об образовании'}`}
+        </button>
       </section>
       <section className={`section problems ${props.isProblemsFocused ? 'section_focused' : ''}`} id="problems">
         <div className="problems__intro">
