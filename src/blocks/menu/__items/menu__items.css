@@ -11,6 +11,6 @@
   .menu__items {
     grid-template-columns: 1fr;
     justify-items: start;
-    margin-left: 8%;
+    margin-left: 5%;
   }
 }

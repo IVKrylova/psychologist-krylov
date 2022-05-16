@@ -22,7 +22,6 @@
 
 @import url(./blocks/nav-menu/nav-menu.css);
 @import url(./blocks/nav-menu/__icon-menu/nav-menu__icon-menu.css);
-@import url(./blocks/nav-menu/__icon-menu/_invisible/nav-menu__icon-menu_invisible.css);
 
 @import url(./blocks/content/content.css);
 

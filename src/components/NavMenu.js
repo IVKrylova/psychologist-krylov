@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavHashLink } from 'react-router-hash-link';
 import iconMenu from '../images/header-menu.png';
-import buttonClose from '../images/button-close.svg';
 
 function NavMenu(props) {
   return (
@@ -26,7 +25,6 @@ function NavMenu(props) {
         </ul>
       </nav>
       <img src={iconMenu} alt="иконка меню" className="nav-menu__icon-menu" onClick={props.onToggleMenu} />
-      <img src={buttonClose} alt="кнопка закрыть" className="nav-menu__icon-menu nav-menu__icon-menu_invisible" />
     </section>
   );
 }

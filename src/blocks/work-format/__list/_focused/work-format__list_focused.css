@@ -1,3 +1,9 @@
 .work-format__list_focused {
   margin-top: 100px;
 }
+
+@media screen and (max-width: 660px) {
+  .work-format__list_focused {
+    margin-top: 50px;
+  }
+}

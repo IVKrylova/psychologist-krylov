@@ -23,6 +23,7 @@ function App() {
     setIsAboutMeFocused(true);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
+    setIsMenuOpen(false);
   }
 
   // обработчик изменения стилей при переходу к якорю Problems
@@ -30,6 +31,7 @@ function App() {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(true);
     setIsWorkFormatFocused(false);
+    setIsMenuOpen(false);
   }
 
   // обработчик изменения стилей при переходу к якорю WorkFormat
@@ -37,6 +39,7 @@ function App() {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(true);
+    setIsMenuOpen(false);
   }
 
    // обработчик изменения стилей при переходу к остальным якорям
@@ -44,6 +47,7 @@ function App() {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
+    setIsMenuOpen(false);
   }
 
   // обработчик изменения padding-top для AboutMe при скролле

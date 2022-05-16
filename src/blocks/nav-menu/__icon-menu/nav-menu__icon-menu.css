@@ -6,14 +6,8 @@
   .nav-menu__icon-menu {
     display: block;
     grid-area: header__icon-menu;
-    margin: 20px 0 0 8%;
+    margin: -35px 0 0 4%;
     width: 24px;
     height: 24px;
-  }
-}
-
-@media screen and (max-width: 525px) {
-  .nav-menu__icon-menu {
-    margin-left: 25%;
   }
 }
