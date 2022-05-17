@@ -15,10 +15,10 @@ function Header() {
       <h1 className="header__title">Психолог Алексей Крылов</h1>
       <ul className="header__contacts">
         <li>
-          <a className="header__contact" href="#">8 910 103 15 99</a>
+          <a className="header__contact" href="tel:+79101031599">8 910 103 15 99</a>
         </li>
         <li>
-          <a className="header__contact" href="#">
+          <a className="header__contact" href="skype:basni_krylova?chat">
             <img src={iconSkype} className="header__icon" alt="skype" />
           </a>
         </li>
