@@ -1,15 +1,20 @@
 import React from "react";
+import { NavHashLink } from 'react-router-hash-link';
 
-function Price() {
+function Price(props) {
   return (
     <section className="section price" id="price">
       <h2 className="section__title section__title_place_price">Стоимость</h2>
       <ul className="price__button-list">
         <li>
-          <button type="button" className="button">Очная сессия 1500 руб.</button>
+          <NavHashLink smooth to={'/#appointment'}>
+            <button type="button" className="button" onClick={props.onClickButtonOffline}>Очная сессия 1500 руб.</button>
+          </NavHashLink>
         </li>
         <li>
-          <button type="button" className="button">Skype-сессия 1000 руб.</button>
+          <NavHashLink smooth to={'/#appointment'}>
+            <button type="button" className="button" onClick={props.onClickButtonOnline}>Skype-сессия 1000 руб.</button>
+          </NavHashLink>
         </li>
       </ul>
       <p className="price__discount">Студентам скидка 30%</p>

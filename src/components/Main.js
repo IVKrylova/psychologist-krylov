@@ -51,10 +51,14 @@ function Main(props) {
         </ul>
       </section>
       <WorkFormat isWorkFormatFocused={props.isWorkFormatFocused} />
-      <Price />
+      <Price onClickButtonOffline={props.onClickButtonOffline}
+          onClickButtonOnline={props.onClickButtonOnline} />
       <section className="section appointment" id="appointment">
         <h2 className="section__title section__title_place_appointment">Записаться на консультацию</h2>
-        <Form />
+        <Form isRadioOfflineChecked={props.isRadioOfflineChecked}
+          isRadioOnlineChecked={props.isRadioOnlineChecked}
+          onClickButtonOffline={props.onClickButtonOffline}
+          onClickButtonOnline={props.onClickButtonOnline} />
       </section>
       <Contacts />
     </main>

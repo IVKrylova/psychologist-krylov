@@ -17,6 +17,9 @@ function App() {
   const [isVisibleDiploma, setIsVisibleDiploma] = useState(false);
   // стейт выбранного диплома
   const [selectedDiploma, setSelectedDiploma] = useState({title: '', img: '', id: ''});
+  // стейт выбранного значения радио-кнопки
+  const [isRadioOfflineChecked, setIsRadioOfflineChecked] = useState(false);
+  const [isRadioOnlineChecked, setIsRadioOnlineChecked] = useState(false);
 
   // обработчик переключения меню
   const handleToggleMenu = () => {
@@ -82,6 +85,18 @@ function App() {
     }
   }
 
+  // обработчик клика по кнопке Очная сессия
+  const handleClickButtonOffline = () => {
+    setIsRadioOfflineChecked(true);
+    setIsRadioOnlineChecked(false);
+  }
+
+  // обработчик клика по кнопке Skype-сессия
+  const handleClickButtonOnline = () => {
+    setIsRadioOnlineChecked(true);
+    setIsRadioOfflineChecked(false);
+  }
+
   // обработчик скролла страницы
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -123,7 +138,11 @@ function App() {
           isWorkFormatFocused={isWorkFormatFocused}
           onClickButtonEducation={toggleButtonEducation}
           isVisibleDiploma={isVisibleDiploma}
-          onDiplomaClick={handleDiplomaClick} />
+          onDiplomaClick={handleDiplomaClick}
+          onClickButtonOffline={handleClickButtonOffline}
+          isRadioOfflineChecked={isRadioOfflineChecked}
+          onClickButtonOnline={handleClickButtonOnline}
+          isRadioOnlineChecked={isRadioOnlineChecked} />
         <Footer />
         <Popup diploma={selectedDiploma}
           onClose={closePopup} />
