@@ -97,3 +97,5 @@
 @import url(./blocks/popup/_background/popup_background_opacity.css);
 @import url(./blocks/popup/_opened/popup_opened.css);
 @import url(./blocks/button-close/button-close.css);
+
+@import url(./blocks/navHashLink-button/navHashLink-button.css);

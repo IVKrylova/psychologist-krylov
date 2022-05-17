@@ -7,12 +7,12 @@ function Price(props) {
       <h2 className="section__title section__title_place_price">Стоимость</h2>
       <ul className="price__button-list">
         <li>
-          <NavHashLink smooth to={'/#appointment'}>
+          <NavHashLink smooth to={'/#appointment'} className="navHashLink-button">
             <button type="button" className="button" onClick={props.onClickButtonOffline}>Очная сессия 1500 руб.</button>
           </NavHashLink>
         </li>
         <li>
-          <NavHashLink smooth to={'/#appointment'}>
+          <NavHashLink smooth to={'/#appointment'} className="navHashLink-button">
             <button type="button" className="button" onClick={props.onClickButtonOnline}>Skype-сессия 1000 руб.</button>
           </NavHashLink>
         </li>

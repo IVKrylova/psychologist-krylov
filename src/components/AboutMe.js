@@ -1,5 +1,6 @@
 import React from "react";
 import myPhoto from '../images/photo-krylov.png';
+import { NavHashLink } from 'react-router-hash-link';
 
 function AboutMe(props) {
   return (
@@ -13,7 +14,9 @@ function AboutMe(props) {
           из каких бы то ни было книжек и предыдущего опыта, истину, а,
           следовательно, и решение проблемы можно обнаружить только
           в совместном творческом поиске и осмыслении</p>
-        <button className="button about-me__button" type="button">Записаться</button>
+        <NavHashLink smooth to={'/#appointment'} className="navHashLink-button">
+          <button className="button about-me__button" type="button">Записаться</button>
+        </NavHashLink>
       </div>
       <img className="about-me__photo" src={myPhoto} alt="Психолог Алексей Крылов" />
     </section>
