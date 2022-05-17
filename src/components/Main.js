@@ -19,7 +19,8 @@ function Main(props) {
                 title={diploma.title}
                 id={diploma.id}
                 key={diploma.id}
-                isVisibleDiploma={props.isVisibleDiploma} />
+                isVisibleDiploma={props.isVisibleDiploma}
+                onDiplomaClick={props.onDiplomaClick} />
             );
           })}
         </ul>

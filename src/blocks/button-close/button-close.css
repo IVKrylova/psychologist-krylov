@@ -1,0 +1,30 @@
+.button-close {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(../../images/button-close.svg);
+  background-color: transparent;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background-size: contain;
+}
+
+.button-close:hover {
+  cursor: pointer;
+  opacity: .6;
+  transition: .7s;
+}
+
+@media screen and (max-width: 640px) {
+  .button-close {
+    width: 20px;
+    height: 20px;
+    right: 0;
+    top: -32px;
+  }
+}

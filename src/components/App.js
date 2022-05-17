@@ -3,6 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import NavMenu from './NavMenu';
+import Popup from './Popup';
 import { problems, diplomas } from '../utils/constants';
 
 function App() {
@@ -12,8 +13,10 @@ function App() {
   const [isAboutMeFocused, setIsAboutMeFocused] = useState(false);
   const [isProblemsFocused, setIsProblemsFocused] = useState(false);
   const [isWorkFormatFocused, setIsWorkFormatFocused] = useState(false);
-  // стейты дипломов в блоке об образовании
+  // стейт дипломов в блоке об образовании
   const [isVisibleDiploma, setIsVisibleDiploma] = useState(false);
+  // стейт выбранного диплома
+  const [selectedDiploma, setSelectedDiploma] = useState({title: '', img: '', id: ''});
 
   // обработчик переключения меню
   const handleToggleMenu = () => {
@@ -62,16 +65,49 @@ function App() {
     isVisibleDiploma ? setIsVisibleDiploma(false) : setIsVisibleDiploma(true);
   }
 
-  // навешиваем обработчик на документ
+  // открытие popup с дипломом
+  const handleDiplomaClick = (diploma) => {
+    setSelectedDiploma(diploma);
+  }
+
+  // закрытие popup
+  const closePopup = () => {
+    setSelectedDiploma({...{title: '', img: '', id: ''}});
+  }
+
+  // обработчик закрытия popup при клике вне его
+  const handleBackgroundClose = (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup();
+    }
+  }
+
+  // обработчик скролла страницы
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
+
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  useEffect(() => {
+    // обработчик закрытия popup при нажатии на Esc
+    const handleEscClose = (evt) => {
+      if (evt.key === "Escape") {
+        closePopup();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => document.removeEventListener("keydown", handleEscClose);
+  }, []);
+
   return (
-    <div className="site-background" onScroll={handleScroll}>
+    <div className="site-background"
+      onScroll={handleScroll}
+      onClick={handleBackgroundClose}>
       <div className="page">
         <Header />
         <NavMenu isMenuOpen={isMenuOpen}
@@ -86,8 +122,11 @@ function App() {
           isProblemsFocused={isProblemsFocused}
           isWorkFormatFocused={isWorkFormatFocused}
           onClickButtonEducation={toggleButtonEducation}
-          isVisibleDiploma={isVisibleDiploma} />
+          isVisibleDiploma={isVisibleDiploma}
+          onDiplomaClick={handleDiplomaClick} />
         <Footer />
+        <Popup diploma={selectedDiploma}
+          onClose={closePopup} />
       </div>
     </div>
   );
