@@ -20,6 +20,10 @@ function App() {
   // стейт выбранного значения радио-кнопки
   const [isRadioOfflineChecked, setIsRadioOfflineChecked] = useState(false);
   const [isRadioOnlineChecked, setIsRadioOnlineChecked] = useState(false);
+  // стейт выбранного значения checkbox
+  const [isChecked, setIsChecked] = useState(true);
+  // стейт состояния формы
+  const [isSent, setIsSent] = useState(false);
 
   // обработчик переключения меню
   const handleToggleMenu = () => {
@@ -85,6 +89,12 @@ function App() {
     }
   }
 
+  // обработчик формы записи на прием
+  const handleMakeAppointment = (props) => {
+    setIsSent(true);
+    /* TODO: запрос к API сервера для отправки данных на email */
+  }
+
   // обработчик клика по кнопке Очная сессия
   const handleClickButtonOffline = () => {
     setIsRadioOfflineChecked(true);
@@ -95,6 +105,11 @@ function App() {
   const handleClickButtonOnline = () => {
     setIsRadioOnlineChecked(true);
     setIsRadioOfflineChecked(false);
+  }
+
+  // обработчик checkbox в форме
+  const toggleCheckbox = () => {
+    isChecked ? setIsChecked(false) : setIsChecked(true);
   }
 
   // обработчик скролла страницы
@@ -142,7 +157,11 @@ function App() {
           onClickButtonOffline={handleClickButtonOffline}
           isRadioOfflineChecked={isRadioOfflineChecked}
           onClickButtonOnline={handleClickButtonOnline}
-          isRadioOnlineChecked={isRadioOnlineChecked} />
+          isRadioOnlineChecked={isRadioOnlineChecked}
+          onMakeAppointment={handleMakeAppointment}
+          isChecked={isChecked}
+          onToggleCheckbox={toggleCheckbox}
+          isSent={isSent} />
         <Footer />
         <Popup diploma={selectedDiploma}
           onClose={closePopup} />

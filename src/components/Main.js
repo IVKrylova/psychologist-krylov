@@ -58,7 +58,11 @@ function Main(props) {
         <Form isRadioOfflineChecked={props.isRadioOfflineChecked}
           isRadioOnlineChecked={props.isRadioOnlineChecked}
           onClickButtonOffline={props.onClickButtonOffline}
-          onClickButtonOnline={props.onClickButtonOnline} />
+          onClickButtonOnline={props.onClickButtonOnline}
+          onMakeAppointment={props.onMakeAppointment}
+          onToggleCheckbox={props.onToggleCheckbox}
+          isChecked={props.isChecked}
+          isSent={props.isSent} />
       </section>
       <Contacts />
     </main>
