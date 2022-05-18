@@ -4,7 +4,9 @@ import Main from './Main';
 import Footer from './Footer';
 import NavMenu from './NavMenu';
 import Popup from './Popup';
-import { problems, diplomas } from '../utils/constants';
+import CookiesNotification from './CookiesNotification';
+import { problems, diplomas, COOKIES_NAME } from '../utils/constants';
+import Cookies from 'js-cookie';
 
 function App() {
   // стейты разворачивающегося меню
@@ -24,6 +26,8 @@ function App() {
   const [isChecked, setIsChecked] = useState(true);
   // стейт состояния формы
   const [isSent, setIsSent] = useState(false);
+  // стейт уведомления о cookies
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
   // обработчик переключения меню
   const handleToggleMenu = () => {
@@ -112,6 +116,21 @@ function App() {
     isChecked ? setIsChecked(false) : setIsChecked(true);
   }
 
+  // обработчик клика по кнопке в уведомлении о cookies
+  const handleClickAccept = () => {
+    Cookies.set(COOKIES_NAME, true, {
+      expires: 7, // время хранение в днях
+    });
+    setIsNotificationOpen(false);
+  }
+
+  // изменение состояния окна уведомнелия о cookies
+  useEffect(() => {
+    if (!Cookies.get(COOKIES_NAME)) {
+      setIsNotificationOpen(true);
+    }
+  }, []);
+
   // обработчик скролла страницы
   useEffect(() => {
     document.addEventListener('scroll', handleScroll);
@@ -165,6 +184,8 @@ function App() {
         <Footer />
         <Popup diploma={selectedDiploma}
           onClose={closePopup} />
+        <CookiesNotification isNotificationOpen={isNotificationOpen}
+          onClickAccept={handleClickAccept} />
       </div>
     </div>
   );

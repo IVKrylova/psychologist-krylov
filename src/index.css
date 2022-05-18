@@ -99,3 +99,9 @@
 @import url(./blocks/button-close/button-close.css);
 
 @import url(./blocks/navHashLink-button/navHashLink-button.css);
+
+@import url(./blocks/notification/notification.css);
+@import url(./blocks/notification/_opened/notification_opened.css);
+@import url(./blocks/notification/__text/notification__text.css);
+@import url(./blocks/notification/__link/notification__link.css);
+@import url(./blocks/button/_place_notification/button_place_notification.css);

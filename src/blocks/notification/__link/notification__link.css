@@ -1,0 +1,7 @@
+.notification__link {
+  grid-area: notification__link;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  margin-bottom: 15px;
+}

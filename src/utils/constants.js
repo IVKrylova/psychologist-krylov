@@ -31,7 +31,6 @@ import educationWopsaPhenomenologyI from '../images/edc-15.jpg';
 import educationWopsaPhenomenologyIIPI from '../images/edc-16.jpg';
 import educationWopsaPhenomenologyIII from '../images/edc-17.jpg';
 
-
 export const problems = [
   {
     title: 'Отношения с окружающими',
@@ -194,3 +193,5 @@ export const diplomas = [
     id: 17
   }
 ];
+
+export const COOKIES_NAME = 'visit';

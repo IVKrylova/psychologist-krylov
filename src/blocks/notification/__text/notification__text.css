@@ -1,0 +1,6 @@
+.notification__text {
+  grid-area: notification__text;
+  line-height: 1.22;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
