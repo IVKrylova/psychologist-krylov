@@ -24,7 +24,7 @@ function Form(props) {
   }, [props.isSent]);
 
   return (
-    <form className="form" name="appointment" onSubmit={handleSubmit} isValid={isValid}>
+    <form className="form" name="appointment" onSubmit={handleSubmit}>
       {/* поле Ваше имя */}
       <input type="text" name="name" minLength="2" maxLength="100" placeholder="Ваше имя" required className="form__input"
         value={values.name || ''}
