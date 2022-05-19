@@ -2,6 +2,7 @@
 @import url(./vendor/fonts/roboto/roboto.css);
 @import url(./blocks/site-background/site-background.css);
 @import url(./blocks/page/page.css);
+@import url(./blocks/link/link.css);
 
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__lang-links/header__lang-links.css);
@@ -98,10 +99,15 @@
 @import url(./blocks/popup/_opened/popup_opened.css);
 @import url(./blocks/button-close/button-close.css);
 
-@import url(./blocks/navHashLink-button/navHashLink-button.css);
-
 @import url(./blocks/notification/notification.css);
 @import url(./blocks/notification/_opened/notification_opened.css);
 @import url(./blocks/notification/__text/notification__text.css);
 @import url(./blocks/notification/__link/notification__link.css);
 @import url(./blocks/button/_place_notification/button_place_notification.css);
+
+@import url(./blocks/privacy-policy/privacy-policy.css);
+@import url(./blocks/privacy-policy/__title/privacy-policy__title.css);
+@import url(./blocks/privacy-policy/__list/privacy-policy__list.css);
+@import url(./blocks/privacy-policy/__link/privacy-policy__link.css);
+@import url(./blocks/privacy-policy/__text/privacy-policy__text.css);
+@import url(./blocks/button/_place_privacy-policy/button_place_privacy-policy.css);

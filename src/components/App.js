@@ -5,8 +5,10 @@ import Footer from './Footer';
 import NavMenu from './NavMenu';
 import Popup from './Popup';
 import CookiesNotification from './CookiesNotification';
+import PrivacyPolicy from './PrivacyPolicy';
 import { problems, diplomas, COOKIES_NAME } from '../utils/constants';
 import Cookies from 'js-cookie';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   // стейты разворачивающегося меню
@@ -159,28 +161,35 @@ function App() {
       onClick={handleBackgroundClose}>
       <div className="page">
         <Header />
-        <NavMenu isMenuOpen={isMenuOpen}
-          onToggleMenu={handleToggleMenu}
-          onClickAboutMe={handleAddPaddingAboutMe}
-          onClickProblems={handleAddPaddingProblems}
-          onClickWorkFormat={handleAddPaddingWorkFormat}
-          onClickAnchor={handleDeletePaddingAnchor} />
-        <Main problems={problems}
-          diplomas={diplomas}
-          isAboutMeFocused={isAboutMeFocused}
-          isProblemsFocused={isProblemsFocused}
-          isWorkFormatFocused={isWorkFormatFocused}
-          onClickButtonEducation={toggleButtonEducation}
-          isVisibleDiploma={isVisibleDiploma}
-          onDiplomaClick={handleDiplomaClick}
-          onClickButtonOffline={handleClickButtonOffline}
-          isRadioOfflineChecked={isRadioOfflineChecked}
-          onClickButtonOnline={handleClickButtonOnline}
-          isRadioOnlineChecked={isRadioOnlineChecked}
-          onMakeAppointment={handleMakeAppointment}
-          isChecked={isChecked}
-          onToggleCheckbox={toggleCheckbox}
-          isSent={isSent} />
+        <Switch>
+          <Route exact path="/">
+            <NavMenu isMenuOpen={isMenuOpen}
+              onToggleMenu={handleToggleMenu}
+              onClickAboutMe={handleAddPaddingAboutMe}
+              onClickProblems={handleAddPaddingProblems}
+              onClickWorkFormat={handleAddPaddingWorkFormat}
+              onClickAnchor={handleDeletePaddingAnchor} />
+            <Main problems={problems}
+              diplomas={diplomas}
+              isAboutMeFocused={isAboutMeFocused}
+              isProblemsFocused={isProblemsFocused}
+              isWorkFormatFocused={isWorkFormatFocused}
+              onClickButtonEducation={toggleButtonEducation}
+              isVisibleDiploma={isVisibleDiploma}
+              onDiplomaClick={handleDiplomaClick}
+              onClickButtonOffline={handleClickButtonOffline}
+              isRadioOfflineChecked={isRadioOfflineChecked}
+              onClickButtonOnline={handleClickButtonOnline}
+              isRadioOnlineChecked={isRadioOnlineChecked}
+              onMakeAppointment={handleMakeAppointment}
+              isChecked={isChecked}
+              onToggleCheckbox={toggleCheckbox}
+              isSent={isSent} />
+            </Route>
+            <Route path="/privacy-policy">
+              <PrivacyPolicy />
+            </Route>
+          </Switch>
         <Footer />
         <Popup diploma={selectedDiploma}
           onClose={closePopup} />

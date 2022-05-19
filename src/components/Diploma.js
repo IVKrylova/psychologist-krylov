@@ -1,6 +1,7 @@
 import React from "react";
-// обработчик клика по диплому
+
 function Diploma(props) {
+  // обработчик клика по диплому
   function handleClick() {
     props.onDiplomaClick(props);
   }

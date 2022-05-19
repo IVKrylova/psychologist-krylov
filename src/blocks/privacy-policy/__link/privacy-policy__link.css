@@ -1,0 +1,9 @@
+.privacy-policy__link {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.privacy-policy__link:hover {
+  cursor: pointer;
+  opacity: .8;
+}
