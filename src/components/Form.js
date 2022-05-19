@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useFormAndValidation } from '../hooks/useFormAndValidation';
 
 function Form(props) {
@@ -60,7 +61,7 @@ function Form(props) {
           onChange={props.onToggleCheckbox} />
         <label htmlFor="agreement">
           Отправляя сообщение, я даю согласие на обработку своих персональных данных и подтверждаю, что ознакомлен(а)
-          с Политикой конфиденциальности
+          с&ensp;<Link to="/privacy-policy" className="link link_place_form">Политикой конфиденциальности</Link>
         </label>
         <span className={`form__input-error ${!props.isChecked ? 'form__input-error_active' : ''}`}>
           {!props.isChecked && 'Чтобы записаться, установите этот флажок'}

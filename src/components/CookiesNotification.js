@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function CookiesNotification(props) {
   return (
@@ -8,7 +9,7 @@ function CookiesNotification(props) {
         Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить
         файлы cookie в настройках Вашего браузера
       </p>
-      <a href="#" className="notification__link">Политика конфиденциальности</a>
+      <Link to="/privacy-policy" className="notification__link">Политика конфиденциальности</Link>
       <button className="button button_place_notification" type="button" onClick={props.onClickAccept}>Принять</button>
     </section>
   );

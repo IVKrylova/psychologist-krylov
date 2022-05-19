@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import HomeButton from './HomeButton';
 
 function PrivacyPolicy() {
   return (
@@ -222,9 +222,7 @@ function PrivacyPolicy() {
           </p>
         </li>
       </ul>
-      <Link to="/" className="link">
-        <button className="button button_place_privacy-policy" type="button">На главную</button>
-      </Link>
+      <HomeButton />
     </section>
   );
 }
