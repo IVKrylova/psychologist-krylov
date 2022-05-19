@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavHashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import iconMenu from '../images/header-menu.png';
 
 function NavMenu(props) {
@@ -8,7 +9,7 @@ function NavMenu(props) {
       <nav className={`menu ${props.isMenuOpen ? 'menu_visible' : ''}`}>
         <ul className="menu__items">
           <li className="menu__item">
-            <NavHashLink onClick={props.onClickAboutMe} smooth to={'/#about-me'} className={`menu__link ${(isActive) =>(isActive && 'menu__link_activ')}`}>Кто я?</NavHashLink>
+            <Link onClick={props.onClickAboutMe} to='/' className={`menu__link ${props.isAboutMeFocused ? 'menu__link_activ' : ''}`}>Кто я?</Link>
           </li>
           <li className="menu__item">
             <NavHashLink onClick={props.onClickProblems} smooth to={'/#problems'} className={`menu__link ${(isActive) =>(isActive && 'menu__link_activ')}`}>Решение проблем</NavHashLink>

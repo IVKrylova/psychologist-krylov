@@ -4,7 +4,7 @@ import { NavHashLink } from 'react-router-hash-link';
 
 function AboutMe(props) {
   return (
-    <section className={`section about-me ${props.isAboutMeFocused ? 'section_focused' : ''}`} id="about-me">
+    <section className="section about-me" id="about-me">
       <div className="about-me__description">
         <p className="about-me__text">Меня зовут Алексей Крылов. Я являюсь практикующим психологом:
           провожу индивидуальные психологические консультации и

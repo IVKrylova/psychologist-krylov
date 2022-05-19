@@ -10,7 +10,7 @@ import Contacts from './Contacts';
 function Main(props) {
   return (
     <main className="content">
-      <AboutMe isAboutMeFocused={props.isAboutMeFocused} />
+      <AboutMe />
       <section className="section education" id="education">
         <ul className="education__documents">
           {props.diplomas.map(diploma => {

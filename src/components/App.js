@@ -8,7 +8,7 @@ import CookiesNotification from './CookiesNotification';
 import PrivacyPolicy from './PrivacyPolicy';
 import { problems, diplomas, COOKIES_NAME } from '../utils/constants';
 import Cookies from 'js-cookie';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 
 function App() {
   // стейты разворачивающегося меню
@@ -66,11 +66,6 @@ function App() {
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
     setIsMenuOpen(false);
-  }
-
-  // обработчик изменения padding-top для AboutMe при скролле
-  const handleScroll = () => {
-    window.pageYOffset <= 200 && setIsAboutMeFocused(false);
   }
 
   // обработчик клика на кнопку "Больше об образовании"
@@ -133,15 +128,6 @@ function App() {
     }
   }, []);
 
-  // обработчик скролла страницы
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   useEffect(() => {
     // обработчик закрытия popup при нажатии на Esc
     const handleEscClose = (evt) => {
@@ -157,7 +143,6 @@ function App() {
 
   return (
     <div className="site-background"
-      onScroll={handleScroll}
       onClick={handleBackgroundClose}>
       <div className="page">
         <Header />
@@ -168,10 +153,10 @@ function App() {
               onClickAboutMe={handleAddPaddingAboutMe}
               onClickProblems={handleAddPaddingProblems}
               onClickWorkFormat={handleAddPaddingWorkFormat}
-              onClickAnchor={handleDeletePaddingAnchor} />
+              onClickAnchor={handleDeletePaddingAnchor}
+              isAboutMeFocused={isAboutMeFocused} />
             <Main problems={problems}
               diplomas={diplomas}
-              isAboutMeFocused={isAboutMeFocused}
               isProblemsFocused={isProblemsFocused}
               isWorkFormatFocused={isWorkFormatFocused}
               onClickButtonEducation={toggleButtonEducation}
