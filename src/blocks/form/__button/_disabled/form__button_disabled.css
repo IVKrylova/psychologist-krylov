@@ -7,5 +7,12 @@
 
 .form__button_disabled:hover {
   opacity: .5;
-  cursor: pointer;
+  cursor: default;
+}
+
+.form__button_disabled:hover:before,
+.form__button_disabled:hover:after {
+  height: 0;
+  width: 0;
+  opacity: 0;
 }
