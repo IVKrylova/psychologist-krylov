@@ -9,7 +9,7 @@ function CookiesNotification(props) {
         Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить
         файлы cookie в настройках Вашего браузера
       </p>
-      <Link to="/privacy-policy" className="notification__link">Политика конфиденциальности</Link>
+      <Link to="/privacy-policy" className="link link_place_notification">Политика конфиденциальности</Link>
       <button className="button button_place_notification" type="button" onClick={props.onClickAccept}>Принять</button>
     </section>
   );
