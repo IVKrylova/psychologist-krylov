@@ -18,7 +18,7 @@ function Header() {
           <a className="header__contact" href="tel:+79101031599">8 910 103 15 99</a>
         </li>
         <li>
-          <a className="header__contact" href="skype:basni_krylova?chat">
+          <a className="header__contact" href="https://join.skype.com/invite/h70XDqDThlth" target="_blank">
             <img src={iconSkype} className="header__icon" alt="skype" />
           </a>
         </li>

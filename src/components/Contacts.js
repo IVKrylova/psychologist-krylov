@@ -18,7 +18,7 @@ function Contacts() {
         </li>
         <li>
           <img src={iconSkype} alt="иконка Skype" className="contacts__icon" />
-          <a href="skype:basni_krylova?chat" className="contacts__link">basni_krylova</a>
+          <a href="https://join.skype.com/invite/h70XDqDThlth" target="_blank" className="contacts__link">basni_krylova</a>
         </li>
       </ul>
     </section>
