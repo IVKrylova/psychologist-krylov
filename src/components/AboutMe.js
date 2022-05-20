@@ -1,19 +1,22 @@
-import React from "react";
 import myPhoto from '../images/photo-krylov.png';
 import { NavHashLink } from 'react-router-hash-link';
 
-function AboutMe(props) {
+function AboutMe() {
   return (
     <section className="section about-me" id="about-me">
       <div className="about-me__description">
-        <p className="about-me__text">Меня зовут Алексей Крылов. Я являюсь практикующим психологом:
+        <p className="about-me__text">
+          Меня зовут Алексей Крылов. Я являюсь практикующим психологом:
           провожу индивидуальные психологические консультации и
-          групповые тренинги</p>
-        <p className="about-me__text">В своей работе я учитываю индивидуальность каждого человека и считаю,
+          групповые тренинги
+        </p>
+        <p className="about-me__text">
+          В своей работе я учитываю индивидуальность каждого человека и считаю,
           что истина о другом человеке не может быть дана изначально, взята
           из каких бы то ни было книжек и предыдущего опыта, истину, а,
           следовательно, и решение проблемы можно обнаружить только
-          в совместном творческом поиске и осмыслении</p>
+          в совместном творческом поиске и осмыслении
+        </p>
         <NavHashLink smooth to={'/#appointment'} className="link">
           <button className="button about-me__button" type="button">Записаться</button>
         </NavHashLink>

@@ -1,4 +1,3 @@
-import React from "react";
 import iconPhone from '../images/phone.svg';
 import iconEmail from '../images/email.svg';
 import iconSkype from '../images/skype.svg';
@@ -18,7 +17,7 @@ function Contacts() {
         </li>
         <li>
           <img src={iconSkype} alt="иконка Skype" className="contacts__icon" />
-          <a href="https://join.skype.com/invite/h70XDqDThlth" target="_blank" className="contacts__link">basni_krylova</a>
+          <a href="https://join.skype.com/invite/h70XDqDThlth" rel="author" target="_blank" className="contacts__link">basni_krylova</a>
         </li>
       </ul>
     </section>

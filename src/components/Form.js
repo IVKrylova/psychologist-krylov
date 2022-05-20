@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormAndValidation } from '../hooks/useFormAndValidation';
@@ -20,21 +19,23 @@ function Form(props) {
   }
 
   // сброс значений инпутов формы
-  useEffect(() => {
+  useEffect(_ => {
     resetForm();
   }, [props.isSent]);
 
   return (
     <form className="form" name="appointment" onSubmit={handleSubmit}>
       {/* поле Ваше имя */}
-      <input type="text" name="name" minLength="2" maxLength="100" placeholder="Ваше имя" required className="form__input"
+      <input type="text" name="name" minLength="2" maxLength="100"
+        placeholder="Ваше имя" required className="form__input"
         value={values.name || ''}
         onChange={handleChange} />
       <span className={`form__input-error ${!isValid ? 'form__input-error_active' : ''}`}>
         {!isValid && errors.name}
       </span>
       {/* поле Ваш телефон */}
-      <input type="tel" name="phone" minLength="11" maxLength="11" pattern="[0-9]{11}" placeholder="Ваш телефон в формате 89051112233" required className="form__input"
+      <input type="tel" name="phone" minLength="11" maxLength="11" pattern="[0-9]{11}"
+        placeholder="Ваш телефон в формате 89051112233" required className="form__input"
         value={values.phone || ''}
         onChange={handleChange} />
       <span className={`form__input-error ${!isValid ? 'form__input-error_active' : ''}`}>

@@ -1,4 +1,3 @@
-import React from 'react';
 import iconSkype from '../images/skype.svg';
 
 function Header() {

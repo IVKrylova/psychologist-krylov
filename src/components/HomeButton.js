@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
 function HomeButton() {
+  // доступ к истории
   const history = useHistory();
 
   // обработчик клика на копку На главную

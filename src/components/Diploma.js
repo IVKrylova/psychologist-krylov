@@ -1,5 +1,3 @@
-import React from "react";
-
 function Diploma(props) {
   // обработчик клика по диплому
   function handleClick() {

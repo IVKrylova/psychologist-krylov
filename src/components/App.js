@@ -8,7 +8,7 @@ import CookiesNotification from './CookiesNotification';
 import PrivacyPolicy from './PrivacyPolicy';
 import { problems, diplomas, COOKIES_NAME } from '../utils/constants';
 import Cookies from 'js-cookie';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   // стейты разворачивающегося меню
@@ -32,12 +32,12 @@ function App() {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
   // обработчик переключения меню
-  const handleToggleMenu = () => {
+  const handleToggleMenu = _ => {
     isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true);
   }
 
   // обработчик изменения стилей при переходу к якорю AboutMe
-  const handleAddPaddingAboutMe = () => {
+  const handleAddPaddingAboutMe = _ => {
     setIsAboutMeFocused(true);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
@@ -45,7 +45,7 @@ function App() {
   }
 
   // обработчик изменения стилей при переходу к якорю Problems
-  const handleAddPaddingProblems = () => {
+  const handleAddPaddingProblems = _ => {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(true);
     setIsWorkFormatFocused(false);
@@ -53,7 +53,7 @@ function App() {
   }
 
   // обработчик изменения стилей при переходу к якорю WorkFormat
-  const handleAddPaddingWorkFormat = () => {
+  const handleAddPaddingWorkFormat = _ => {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(true);
@@ -61,7 +61,7 @@ function App() {
   }
 
    // обработчик изменения стилей при переходу к остальным якорям
-  const handleDeletePaddingAnchor = () => {
+  const handleDeletePaddingAnchor = _ => {
     setIsAboutMeFocused(false);
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
@@ -69,52 +69,52 @@ function App() {
   }
 
   // обработчик клика на кнопку "Больше об образовании"
-  const toggleButtonEducation = () => {
+  const toggleButtonEducation = _ => {
     isVisibleDiploma ? setIsVisibleDiploma(false) : setIsVisibleDiploma(true);
   }
 
   // открытие popup с дипломом
-  const handleDiplomaClick = (diploma) => {
+  const handleDiplomaClick = diploma => {
     setSelectedDiploma(diploma);
   }
 
   // закрытие popup
-  const closePopup = () => {
+  const closePopup = _ => {
     setSelectedDiploma({...{title: '', img: '', id: ''}});
   }
 
   // обработчик закрытия popup при клике вне его
-  const handleBackgroundClose = (evt) => {
+  const handleBackgroundClose = evt => {
     if (evt.target.classList.contains('popup_opened')) {
       closePopup();
     }
   }
 
   // обработчик формы записи на прием
-  const handleMakeAppointment = (props) => {
+  const handleMakeAppointment = _ => {
     setIsSent(true);
     /* TODO: запрос к API сервера для отправки данных на email */
   }
 
   // обработчик клика по кнопке Очная сессия
-  const handleClickButtonOffline = () => {
+  const handleClickButtonOffline = _ => {
     setIsRadioOfflineChecked(true);
     setIsRadioOnlineChecked(false);
   }
 
   // обработчик клика по кнопке Skype-сессия
-  const handleClickButtonOnline = () => {
+  const handleClickButtonOnline = _ => {
     setIsRadioOnlineChecked(true);
     setIsRadioOfflineChecked(false);
   }
 
   // обработчик checkbox в форме
-  const toggleCheckbox = () => {
+  const toggleCheckbox = _ => {
     isChecked ? setIsChecked(false) : setIsChecked(true);
   }
 
   // обработчик клика по кнопке в уведомлении о cookies
-  const handleClickAccept = () => {
+  const handleClickAccept = _ => {
     Cookies.set(COOKIES_NAME, true, {
       expires: 7, // время хранение в днях
     });
@@ -122,23 +122,19 @@ function App() {
   }
 
   // изменение состояния окна уведомнелия о cookies
-  useEffect(() => {
-    if (!Cookies.get(COOKIES_NAME)) {
-      setIsNotificationOpen(true);
-    }
+  useEffect(_ => {
+    if (!Cookies.get(COOKIES_NAME)) setIsNotificationOpen(true);
   }, []);
 
-  useEffect(() => {
+  useEffect(_ => {
     // обработчик закрытия popup при нажатии на Esc
-    const handleEscClose = (evt) => {
-      if (evt.key === "Escape") {
-        closePopup();
-      }
+    const handleEscClose = evt => {
+      if (evt.key === "Escape") closePopup();
     };
 
     document.addEventListener("keydown", handleEscClose);
 
-    return () => document.removeEventListener("keydown", handleEscClose);
+    return _ => document.removeEventListener("keydown", handleEscClose);
   }, []);
 
   return (

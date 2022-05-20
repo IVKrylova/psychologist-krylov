@@ -1,5 +1,3 @@
-import React from "react";
-
 function Problem(props) {
   return (
     <li className="section problems__item">

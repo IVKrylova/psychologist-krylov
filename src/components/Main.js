@@ -27,17 +27,19 @@ function Main(props) {
         <button className="button education__button"
           onClick={props.onClickButtonEducation}
           type="button">
-            {`${props.isVisibleDiploma ? 'Свернуть' : 'Больше об образовании'}`}
+          {`${props.isVisibleDiploma ? 'Свернуть' : 'Больше об образовании'}`}
         </button>
       </section>
       <section className={`section problems ${props.isProblemsFocused ? 'section_focused' : ''}`} id="problems">
         <div className="problems__intro">
           <h2 className="section__title section__title_place_problems">Решение проблем</h2>
-          <p className="problems__description">При встрече с проблемой мы испытываем дискомфорт или даже страдание. Проблема возникает тогда, когда наши
+          <p className="problems__description">
+            При встрече с проблемой мы испытываем дискомфорт или даже страдание. Проблема возникает тогда, когда наши
             представления или желания не совпадают с реальностью мира. В большинстве случаев из проблемы сложно найти выход с
             помощью собственного мышления, так как именно наша привычная стратегия мышления и привычное восприятие мира
             и являются причиной образования проблемы. Наше мышление в любой момент может не справиться со сложностью
-            происходящих в жизни событий, и соответственно, проблема может проявиться в самых разных формах</p>
+            происходящих в жизни событий, и соответственно, проблема может проявиться в самых разных формах
+          </p>
         </div>
         <ul className="problems__list">
           {props.problems.map(problem => {

@@ -9,7 +9,7 @@ export function useFormAndValidation() {
   const [ isValid, setIsValid ] = useState(true);
 
   // обработчик проверки изменения инпута
-  const handleChange = (evt) => {
+  const handleChange = evt => {
     const {name, value} = evt.target;
     setValues({...values, [name]: value });
     setErrors({...errors, [name]: evt.target.validationMessage});

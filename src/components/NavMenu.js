@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavHashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import iconMenu from '../images/header-menu.png';

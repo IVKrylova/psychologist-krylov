@@ -1,4 +1,3 @@
-import React from "react";
 import { NavHashLink } from 'react-router-hash-link';
 
 function Price(props) {
