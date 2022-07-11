@@ -9,7 +9,7 @@ function Contacts() {
       <ul className="contacts__list">
         <li>
           <img src={iconPhone} alt="иконка телефон" className="contacts__icon" />
-          <a href="tel:+79101031599" className="contacts__link">8 910 103 15 99</a>
+          <a href="tel:+79101031599" className="contacts__link">8 920 078 01 06</a>
         </li>
         <li>
           <img src={iconEmail} alt="иконка email" className="contacts__icon" />
