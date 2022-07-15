@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
+import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop'
+import ScrollToTop from './hooks/ScrollToTop'
 
 ReactDOM.render(
   <React.StrictMode>

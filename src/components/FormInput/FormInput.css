@@ -1,0 +1,55 @@
+.form__input {
+  margin-bottom: 20px;
+  width: 100%;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;
+  padding: 18px 0 18px 27px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.17;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form__input::placeholder {
+  color: #8e8b8b;
+  font-family: inherit;
+}
+
+.form__input-checkbox {
+  margin-right: 10px;
+}
+
+.form__input-checkbox:hover {
+  cursor: pointer;
+}
+
+.form__input-radio {
+  margin-right: 10px;
+}
+
+.form__input-radio:hover {
+  cursor: pointer;
+}
+
+.form__input-radio:not(:nth-of-type(1)) {
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  .form__input {
+    font-size: 16px;
+    padding: 15px 0 15px 15px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .form__input {
+    padding: 10px 0 10px 15px;
+  }
+}

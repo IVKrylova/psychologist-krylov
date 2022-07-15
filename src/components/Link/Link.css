@@ -1,0 +1,15 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link_place_form:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.notification__link {
+  grid-area: notification__link;
+  display: block;
+  margin-bottom: 15px;
+}

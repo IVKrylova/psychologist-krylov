@@ -1,0 +1,138 @@
+.header {
+  position: relative;
+  background-color: #151740;
+  width: 100%;
+  display: grid;
+  flex-direction: column;
+  color: #fff;
+  grid-template-areas:
+    'header__lang-links header__lang-links'
+    'header__title header__contacts';
+}
+
+.header__contact {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1.72;
+}
+
+.header__contact:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.header__contacts {
+  grid-area: header__contacts;
+  list-style-type: none;
+  display: flex;
+  margin: 32px 8% 0 auto;
+  padding: 0;
+  column-gap: 19px;
+}
+
+.header__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.header__lang-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header__lang-link_focused {
+  text-decoration: underline;
+}
+
+.header__lang-links {
+  margin: 30px 4% 0 0;
+  font-size: 24px;
+  line-height: 1.17;
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  justify-content: flex-end;
+  column-gap: 18px;
+  font-weight: 300;
+  font-style: normal;
+  grid-area: header__lang-links;
+}
+
+.header__lang-link:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.header__title {
+  font-size: 30px;
+  line-height: 1.17;
+  margin: 32px 0 0 8%;
+  font-weight: 300;
+  font-style: normal;
+  grid-area: header__title;
+}
+
+@media screen and (max-width: 990px) {
+  .header__contact {
+    font-size: 22px;
+  }
+
+  .header__contacts {
+    margin-top: 20px;
+    column-gap: 15px;
+  }
+
+  .header__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__lang-links {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .header__title {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .header {
+    grid-template-areas:
+      'header__title header__lang-links'
+      'header__icon-menu header__contacts';
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .header {
+    grid-template-areas:
+      'header__lang-links header__lang-links'
+      'header__title header__title'
+      'header__icon-menu header__contacts';
+  }
+
+  .header__contact {
+    font-size: 18px;
+  }
+
+  .header__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .header__lang-links {
+    font-size: 16px;
+    column-gap: 10px;
+  }
+
+  .header__title {
+    margin-top: 15px;
+    margin-left: 4%;
+  }
+}

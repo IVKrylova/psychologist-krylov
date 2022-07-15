@@ -1,6 +1,0 @@
-.popup__diploma {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  z-index: 30;
-}

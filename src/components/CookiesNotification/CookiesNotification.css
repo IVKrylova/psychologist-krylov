@@ -1,0 +1,27 @@
+.notification {
+  display: none;
+  z-index: 40;
+  position: fixed;
+  bottom: 0;
+  grid-template-areas:
+    "notification__text"
+    "notification__link"
+    "button_place_notification";
+  width: 100%;
+  max-width: 1180px;
+  background-color: #323036;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 20px 4%;
+}
+
+.notification_opened {
+  display: grid;
+}
+
+.notification__text {
+  grid-area: notification__text;
+  line-height: 1.22;
+  margin-top: 0;
+  margin-bottom: 15px;
+}

@@ -1,9 +1,0 @@
-.section__title_place_work-format {
-  margin: 80px auto 0;
-}
-
-@media screen and (max-width: 1050px) {
-  .section__title_place_work-format {
-    margin-top: 60px;
-  }
-}

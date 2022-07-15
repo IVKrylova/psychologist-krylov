@@ -1,9 +1,0 @@
-.section__title_place_contacts {
-  margin: 100px 0 0 8%;
-}
-
-@media screen and (max-width: 700px) {
-  .section__title_place_contacts {
-    margin-top: 50px;
-  }
-}
