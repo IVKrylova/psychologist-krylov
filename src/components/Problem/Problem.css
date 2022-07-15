@@ -35,7 +35,7 @@
 
 .problems__item:nth-child(n+4)::after {
   content: '';
-  border-top: 3px solid rgba(122, 122, 122, .7);
+  border-top: 1px solid rgba(122, 122, 122, .7);
   box-sizing: border-box;
   width: 100%;
   position: absolute;
@@ -43,7 +43,7 @@
 
 .problems__item:nth-child(3n-1)::before {
   content: '';
-  border-left: 3px solid rgba(122, 122, 122, .7);
+  border-left: 1px solid rgba(122, 122, 122, .7);
   box-sizing: border-box;
   height: 90%;
   position: absolute;
@@ -53,7 +53,7 @@
 
 .problems__item:nth-child(3n)::before {
   content: '';
-  border-left: 3px solid rgba(122, 122, 122, .7);
+  border-left: 1px solid rgba(122, 122, 122, .7);
   box-sizing: border-box;
   height: 90%;
   position: absolute;
@@ -118,7 +118,7 @@
 
   .problems__item:nth-child(2n)::after {
     content: '';
-    border-left: 3px solid rgba(122, 122, 122, .7);
+    border-left: 1px solid rgba(122, 122, 122, .7);
     box-sizing: border-box;
     height: 90%;
     position: absolute;
@@ -128,7 +128,7 @@
 
   .problems__item:nth-child(n+3)::before {
     content: '';
-    border-top: 3px solid rgba(122, 122, 122, .7);
+    border-top: 1px solid rgba(122, 122, 122, .7);
     box-sizing: border-box;
     width: 100%;
     position: absolute;
@@ -164,7 +164,7 @@
 
   .problems__item:nth-child(n+2)::after {
     content: '';
-    border-top: 3px solid rgba(122, 122, 122, .7);
+    border-top: 1px solid rgba(122, 122, 122, .7);
     box-sizing: border-box;
     width: 100%;
     position: absolute;
