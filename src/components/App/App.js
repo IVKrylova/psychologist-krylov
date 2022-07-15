@@ -92,9 +92,10 @@ function App() {
   }
 
   // обработчик формы записи на прием
-  const handleMakeAppointment = _ => {
+  const handleMakeAppointment = data => {
     setIsSent(true);
     /* TODO: запрос к API сервера для отправки данных на email */
+    //console.log(data)
   }
 
   // обработчик клика по кнопке Очная сессия

@@ -14,6 +14,7 @@ function FormInput(props) {
       onChange={props.onChange}
       id={props.id}
       checked={props.checked}
+      onClick={props.onClick}
     />
   );
 }

@@ -21,6 +21,7 @@ function Form(props) {
     props.onMakeAppointment({
       name: values.name,
       phone: values.phone,
+      type: values.type,
     });
   }
 
@@ -78,7 +79,8 @@ function Form(props) {
           id="office"
           value="office"
           checked={props.isRadioOfflineChecked ? true : false}
-          onChange={props.onClickButtonOffline}
+          onClick={props.onClickButtonOffline}
+          onChange={handleChange}
         />
         <label htmlFor="office">
           Очно
@@ -91,7 +93,8 @@ function Form(props) {
           id="skype"
           value="skype"
           checked={props.isRadioOnlineChecked ? true : false}
-          onChange={props.onClickButtonOnline}
+          onClick={props.onClickButtonOnline}
+          onChange={handleChange}
         />
         <label htmlFor="skype">
           Skype
