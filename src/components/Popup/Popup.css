@@ -2,7 +2,6 @@
   display: grid;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.9s, opacity .7s linear;
   justify-content: center;
   align-items: center;
   z-index: 20;
@@ -35,5 +34,5 @@
 .popup_opened {
   visibility: visible;
   opacity: 1;
-  transition: visibility .9s, opacity .7s linear;
+  transition: visibility .95s, opacity .7s linear;
 }
