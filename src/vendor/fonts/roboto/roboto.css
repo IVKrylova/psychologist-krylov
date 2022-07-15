@@ -3,7 +3,7 @@
   font-display: swap;
   font-weight: 300;
   font-style: normal;
-  src: url('Roboto-Light.woff') format('woff');
+  src: url('./Roboto-Light.woff') format('woff');
 }
 
 @font-face {
@@ -11,5 +11,5 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url('Roboto-Regular.woff') format('woff');
+  src: url('./Roboto-Regular.woff') format('woff');
 }

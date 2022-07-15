@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 import Button from '../Button/Button';
 import FormInput from '../FormInput/FormInput';
@@ -47,17 +48,18 @@ function Form(props) {
         text={!isValid && errors.name}
       />
       {/* поле Ваш телефон */}
-      <FormInput
+      <InputMask
         type="tel"
         name="phone"
-        minLength="11"
-        maxLength="11"
-        pattern="[0-9]{11}"
-        placeholder="Ваш телефон в формате 89051112233"
+        minLength="18"
+        maxLength="18"
+        placeholder="Ваш телефон"
         required={true}
         className="form__input"
         value={values.phone || ''}
         onChange={handleChange}
+        mask="+7 (999) 999 99 99"
+        maskChar={null}
       />
       <InputError
         classModifier={!isValid ? 'form__input-error_active' : ''}

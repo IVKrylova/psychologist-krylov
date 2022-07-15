@@ -12,7 +12,6 @@ function FormInput(props) {
       className={props.className}
       value={props.value}
       onChange={props.onChange}
-      pattern={props.pattern}
       id={props.id}
       checked={props.checked}
     />

@@ -9,6 +9,7 @@ import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
 import { problems, diplomas, COOKIES_NAME } from '../../utils/constants';
 import Cookies from 'js-cookie';
 import { Route, Switch } from 'react-router-dom';
+import './App.css';
 
 function App() {
   // стейты разворачивающегося меню
