@@ -7,29 +7,31 @@ import Contacts from '../Contacts/Contacts';
 import Education from '../Education/Education';
 import Appointment from '../Appointment/Appointment';
 import Section from '../Section/Section';
+import { sectionProblem } from '../../utils/content';
 
 function Main(props) {
   return (
     <main className="content">
-      <AboutMe />
+      <AboutMe
+        language={props.language}
+      />
       <Education
         diplomas={props.diplomas}
         isVisibleDiploma={props.isVisibleDiploma}
         onClickButtonEducation={props.onClickButtonEducation}
         onDiplomaClick={props.onDiplomaClick}
+        language={props.language}
       />
       <Section
         classNameSection="problems"
         isProblemsFocused={props.isProblemsFocused}
       >
         <div className="problems__intro">
-          <h2 className="section__title section__title_place_problems">Решение проблем</h2>
+          <h2 className="section__title section__title_place_problems">
+            {props.language === 'Ru' ? sectionProblem.Ru.title : sectionProblem.En.title}
+          </h2>
           <p className="problems__description">
-            При встрече с проблемой мы испытываем дискомфорт или даже страдание. Проблема возникает тогда, когда наши
-            представления или желания не совпадают с реальностью мира. В большинстве случаев из проблемы сложно найти выход с
-            помощью собственного мышления, так как именно наша привычная стратегия мышления и привычное восприятие мира
-            и являются причиной образования проблемы. Наше мышление в любой момент может не справиться со сложностью
-            происходящих в жизни событий, и соответственно, проблема может проявиться в самых разных формах
+            {props.language === 'Ru' ? sectionProblem.Ru.text : sectionProblem.En.text}
           </p>
         </div>
         <ul className="problems__list">
@@ -37,8 +39,8 @@ function Main(props) {
             return (
               <Problem
                 img={problem.img}
-                text={problem.text}
-                title={problem.title}
+                text={props.language === 'Ru' ? problem.RuText : problem.EnText}
+                title={props.language === 'Ru' ? problem.RuTitle : problem.EnTitle}
                 key={problem.id}
               />
             );
@@ -47,10 +49,12 @@ function Main(props) {
       </Section>
       <WorkFormat
         isWorkFormatFocused={props.isWorkFormatFocused}
+        language={props.language}
       />
       <Price
         onClickButtonOffline={props.onClickButtonOffline}
         onClickButtonOnline={props.onClickButtonOnline}
+        language={props.language}
       />
       <Appointment
         isRadioOfflineChecked={props.isRadioOfflineChecked}
@@ -61,8 +65,11 @@ function Main(props) {
         onToggleCheckbox={props.onToggleCheckbox}
         isChecked={props.isChecked}
         isSent={props.isSent}
+        language={props.language}
       />
-      <Contacts />
+      <Contacts
+        language={props.language}
+      />
     </main>
   );
 }

@@ -4,206 +4,173 @@ import PrivacyPolicyItem from '../PrivacyPolicyItem/PrivacyPolicyItem';
 import HomeButton from '../HomeButton/HomeButton';
 import MainLink from '../MainLink/MainLink';
 import PrivacyPolicyList from '../PrivacyPolicyList/PrivacyPolicyList';
+import { privacyPolicy } from '../../utils/content';
 import './PrivacyPolicy.css';
 
-function PrivacyPolicy() {
+function PrivacyPolicy(props) {
   return (
     <Section classNameSection="privacy-policy">
-      <h3 className="privacy-policy__title">Политика в отношении обработки персональных данных</h3>
+      <h3 className="privacy-policy__title">
+        {props.language === 'Ru' ? privacyPolicy.Ru.title : privacyPolicy.En.title}
+      </h3>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          1. Общие положения
+          {props.language === 'Ru' ? privacyPolicy.Ru[0] : privacyPolicy.En[0]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          Настоящая политика обработки персональных данных составлена в соответствии
-          с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных»
-          и определяет порядок обработки персональных данных и меры по обеспечению безопасности
-          персональных данных, предпринимаемые Крыловым Алексеем Николаевичем (далее – Оператор).
+          {props.language === 'Ru' ? privacyPolicy.Ru[1] : privacyPolicy.En[1]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          Оператор ставит своей важнейшей целью и условием осуществления своей деятельности
-          соблюдение прав и свобод человека и гражданина при обработке его персональных данных,
-          в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.
+          {props.language === 'Ru' ? privacyPolicy.Ru[2] : privacyPolicy.En[2]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее – Политика)
-          применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта&ensp;
+          {props.language === 'Ru' ? privacyPolicy.Ru[3] : privacyPolicy.En[3]}
+          &ensp;
           <MainLink />.
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          2. Основные понятия, используемые в Политике:
+          {props.language === 'Ru' ? privacyPolicy.Ru[4] : privacyPolicy.En[4]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.1. Автоматизированная обработка персональных данных – обработка персональных данных с помощью
-          средств вычислительной техники;
+          {props.language === 'Ru' ? privacyPolicy.Ru[5] : privacyPolicy.En[5]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.2. Блокирование персональных данных – временное прекращение обработки персональных данных
-          (за исключением случаев, если обработка необходима для уточнения персональных данных);
+          {props.language === 'Ru' ? privacyPolicy.Ru[6] : privacyPolicy.En[6]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.3. Веб-сайт – совокупность графических и информационных материалов, а также программ для ЭВМ
-          и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу&ensp;
+          {props.language === 'Ru' ? privacyPolicy.Ru[7] : privacyPolicy.En[7]}
+          &ensp;
           <MainLink />
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.4. Информационная система персональных данных — совокупность содержащихся в базах данных персональных
-          данных, и обеспечивающих их обработку информационных технологий и технических средств;
+          {props.language === 'Ru' ? privacyPolicy.Ru[8] : privacyPolicy.En[8]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.5. Обезличивание персональных данных — действия, в результате которых невозможно определить без
-          использования дополнительной информации принадлежность персональных данных конкретному Пользователю
-          или иному субъекту персональных данных;
+          {props.language === 'Ru' ? privacyPolicy.Ru[9] : privacyPolicy.En[9]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.6. Обработка персональных данных – любое действие (операция) или совокупность действий (операций),
-          совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными,
-          включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение,
-          использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление,
-          уничтожение персональных данных;
+          {props.language === 'Ru' ? privacyPolicy.Ru[10] : privacyPolicy.En[10]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.7. Оператор – государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно
-          или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также
-          определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия
-          (операции), совершаемые с персональными данными;
+          {props.language === 'Ru' ? privacyPolicy.Ru[11] : privacyPolicy.En[11]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.8. Персональные данные – любая информация, относящаяся прямо или косвенно к определенному или определяемому
-          Пользователю веб-сайта&ensp;
+          {props.language === 'Ru' ? privacyPolicy.Ru[12] : privacyPolicy.En[12]}
+          &ensp;
           <MainLink />;
         </PrivacyPolicyItem>
-          2.9. Пользователь – любой посетитель веб-сайта&ensp;
+        <PrivacyPolicyItem>
+          {props.language === 'Ru' ? privacyPolicy.Ru[13] : privacyPolicy.En[13]}
+          &ensp;
           <MainLink />;
-        <PrivacyPolicyItem>
-          2.10. Предоставление персональных данных – действия, направленные на раскрытие персональных данных определенному
-          лицу или определенному кругу лиц;
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.11. Распространение персональных данных – любые действия, направленные на раскрытие персональных данных неопределенному
-          кругу лиц (передача персональных данных) или на ознакомление с персональными данными неограниченного круга лиц,
-          в том числе обнародование персональных данных в средствах массовой информации, размещение в информационно-телекоммуникационных
-          сетях или предоставление доступа к персональным данным каким-либо иным способом;
+          {props.language === 'Ru' ? privacyPolicy.Ru[14] : privacyPolicy.En[14]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.12. Трансграничная передача персональных данных – передача персональных данных на территорию иностранного государства органу
-          власти иностранного государства, иностранному физическому или иностранному юридическому лицу;
+          {props.language === 'Ru' ? privacyPolicy.Ru[15] : privacyPolicy.En[15]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          2.13. Уничтожение персональных данных – любые действия, в результате которых персональные данные уничтожаются безвозвратно
-          с невозможностью дальнейшего восстановления содержания персональных данных в информационной системе персональных данных и
-          (или) уничтожаются материальные носители персональных данных.
+          {props.language === 'Ru' ? privacyPolicy.Ru[16] : privacyPolicy.En[16]}
+        </PrivacyPolicyItem>
+        <PrivacyPolicyItem>
+          {props.language === 'Ru' ? privacyPolicy.Ru[17] : privacyPolicy.En[17]}
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          3. Оператор может обрабатывать следующие персональные данные Пользователя:
+          {props.language === 'Ru' ? privacyPolicy.Ru[18] : privacyPolicy.En[18]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          3.1. Фамилия, имя, отчество;
+          {props.language === 'Ru' ? privacyPolicy.Ru[19] : privacyPolicy.En[19]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          3.2. Электронный адрес;
+          {props.language === 'Ru' ? privacyPolicy.Ru[20] : privacyPolicy.En[20]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          3.3. Номера телефонов;
+          {props.language === 'Ru' ? privacyPolicy.Ru[21] : privacyPolicy.En[21]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          3.4. Также на сайте происходит сбор и обработка обезличенных данных о посетителях (в т.ч. файлов «cookie») с помощью
-          сервисов интернет-статистики (Яндекс Метрика и Гугл Аналитика и других).
+          {props.language === 'Ru' ? privacyPolicy.Ru[22] : privacyPolicy.En[22]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          3.5. Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.
-        </PrivacyPolicyItem>
-      </PrivacyPolicyList>
-      <PrivacyPolicyList>
-        <PrivacyPolicyItem>
-          4. Цели обработки персональных данных.
-        </PrivacyPolicyItem>
-        <PrivacyPolicyItem>
-          4.1. Цель обработки персональных данных Пользователя — информирование Пользователя посредством отправки электронных
-          писем; согласование аспектов взаимодействия посредством телефонных звонков; заключение, исполнение и прекращение
-          гражданско-правовых договоров.
-        </PrivacyPolicyItem>
-        <PrivacyPolicyItem>
-          4.2. Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для сбора информации
-          о действиях Пользователей на сайте, улучшения качества сайта и его содержания.
+          {props.language === 'Ru' ? privacyPolicy.Ru[23] : privacyPolicy.En[23]}
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          5. Правовые основания обработки персональных данных
+          {props.language === 'Ru' ? privacyPolicy.Ru[24] : privacyPolicy.En[24]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          5.1. Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем
-          самостоятельно через специальные формы, расположенные на сайте&ensp;
+          {props.language === 'Ru' ? privacyPolicy.Ru[25] : privacyPolicy.En[25]}
+        </PrivacyPolicyItem>
+        <PrivacyPolicyItem>
+          {props.language === 'Ru' ? privacyPolicy.Ru[26] : privacyPolicy.En[26]}
+        </PrivacyPolicyItem>
+      </PrivacyPolicyList>
+      <PrivacyPolicyList>
+        <PrivacyPolicyItem>
+          {props.language === 'Ru' ? privacyPolicy.Ru[27] : privacyPolicy.En[27]}
+        </PrivacyPolicyItem>
+        <PrivacyPolicyItem>
+          {props.language === 'Ru' ? privacyPolicy.Ru[28] : privacyPolicy.En[28]}
+          &ensp;
           <MainLink />.&ensp;
-          Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие
-          с данной Политикой.
+          {props.language === 'Ru' ? privacyPolicy.Ru[29] : privacyPolicy.En[29]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          5.2. Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера
-          Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript).
+          {props.language === 'Ru' ? privacyPolicy.Ru[30] : privacyPolicy.En[30]}
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          6. Порядок сбора, хранения, передачи и других видов обработки персональных данных.
+          {props.language === 'Ru' ? privacyPolicy.Ru[31] : privacyPolicy.En[31]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          6.1. Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых,
-          организационных и технических мер, необходимых для выполнения в полном объеме требований действующего
-          законодательства в области защиты персональных данных.
+          {props.language === 'Ru' ? privacyPolicy.Ru[32] : privacyPolicy.En[32]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          6.2. Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ
-          к персональным данным неуполномоченных лиц.
+          {props.language === 'Ru' ? privacyPolicy.Ru[33] : privacyPolicy.En[33]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          6.3. Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением
-          случаев, связанных с исполнением действующего законодательства.
+          {props.language === 'Ru' ? privacyPolicy.Ru[34] : privacyPolicy.En[34]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          6.4. Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать свое
-          согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на электронный
-          адрес Оператора basni_krylova@bk.ru с пометкой «Отзыв согласия на обработку персональных данных».
+          {props.language === 'Ru' ? privacyPolicy.Ru[35] : privacyPolicy.En[35]}
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          7. Трансграничная передача персональных данных.
+          {props.language === 'Ru' ? privacyPolicy.Ru[36] : privacyPolicy.En[36]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          7.1. Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным
-          государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита
-          прав субъектов персональных данных.
+          {props.language === 'Ru' ? privacyPolicy.Ru[37] : privacyPolicy.En[37]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          7.2. Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям,
-          может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу
-          его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.
+          {props.language === 'Ru' ? privacyPolicy.Ru[38] : privacyPolicy.En[38]}
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
       <PrivacyPolicyList>
         <PrivacyPolicyItem>
-          8. Заключительные положения.
+          {props.language === 'Ru' ? privacyPolicy.Ru[39] : privacyPolicy.En[39]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          8.1. Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных,
-          обратившись к Оператору с помощью электронной почты basni_krylova@bk.ru.
+          {props.language === 'Ru' ? privacyPolicy.Ru[40] : privacyPolicy.En[40]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          8.2. В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует
-          бессрочно до замены ее новой версией.
+          {props.language === 'Ru' ? privacyPolicy.Ru[41] : privacyPolicy.En[41]}
         </PrivacyPolicyItem>
         <PrivacyPolicyItem>
-          8.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу&ensp;
+          {props.language === 'Ru' ? privacyPolicy.Ru[42] : privacyPolicy.En[42]}
+          &ensp;
           <MainLink />.
         </PrivacyPolicyItem>
       </PrivacyPolicyList>
-      <HomeButton />
+      <HomeButton
+        buttontext={props.language === 'Ru' ? privacyPolicy.Ru.button : privacyPolicy.En.button}
+      />
     </Section>
   );
 }

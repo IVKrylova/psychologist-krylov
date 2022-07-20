@@ -6,7 +6,8 @@ import NavMenu from '../NavMenu/NavMenu';
 import Popup from '../Popup/Popup';
 import CookiesNotification from '../CookiesNotification/CookiesNotification';
 import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
-import { problems, diplomas, COOKIES_NAME } from '../../utils/constants';
+import { COOKIES_NAME } from '../../utils/constants';
+import { diplomas, problems } from '../../utils/content';
 import Cookies from 'js-cookie';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -21,7 +22,7 @@ function App() {
   // стейт дипломов в блоке об образовании
   const [isVisibleDiploma, setIsVisibleDiploma] = useState(false);
   // стейт выбранного диплома
-  const [selectedDiploma, setSelectedDiploma] = useState({title: '', img: '', id: ''});
+  const [selectedDiploma, setSelectedDiploma] = useState({Rutitle: '', EnTitle: '', img: '', id: ''});
   // стейт выбранного значения радио-кнопки
   const [isRadioOfflineChecked, setIsRadioOfflineChecked] = useState(false);
   const [isRadioOnlineChecked, setIsRadioOnlineChecked] = useState(false);
@@ -31,6 +32,32 @@ function App() {
   const [isSent, setIsSent] = useState(false);
   // стейт уведомления о cookies
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  // стейт языка страницы
+  const [language, setLanguage] = useState('');
+
+  // установка языка страницы при первой загрузке
+  useEffect(_=> {
+    if(navigator.language === 'ru-RU' ||
+      navigator.language === 'ru-Ru' ||
+      navigator.language === 'ru' ||
+      navigator.language === 'RU' ||
+      navigator.language === 'Ru')
+    {
+      setLanguage('Ru');
+    } else {
+      setLanguage('En');
+    }
+  }, []);
+
+  // обработчик переключения языка сайта на русский
+  const handleClickOnLangRu = _ => {
+    setLanguage('Ru');
+  }
+
+  // обработчик переключения языка сайта на английский
+  const handleClickOnLangEn = _ => {
+    setLanguage('En');
+  }
 
   // обработчик переключения меню
   const handleToggleMenu = _ => {
@@ -81,7 +108,7 @@ function App() {
 
   // закрытие popup
   const closePopup = _ => {
-    setSelectedDiploma({...{title: '', img: '', id: ''}});
+    setSelectedDiploma({...{RuTitle: '', EnTitle: '', img: '', id: ''}});
   }
 
   // обработчик закрытия popup при клике вне его
@@ -143,7 +170,11 @@ function App() {
     <div className="site-background"
       onClick={handleBackgroundClose}>
       <div className="page">
-        <Header />
+        <Header
+          language={language}
+          clickOnLangRu={handleClickOnLangRu}
+          clickOnLangEn={handleClickOnLangEn}
+        />
         <Switch>
           <Route exact path="/">
             <NavMenu
@@ -154,6 +185,7 @@ function App() {
               onClickWorkFormat={handleAddPaddingWorkFormat}
               onClickAnchor={handleDeletePaddingAnchor}
               isAboutMeFocused={isAboutMeFocused}
+              language={language}
             />
             <Main
               problems={problems}
@@ -171,13 +203,18 @@ function App() {
               isChecked={isChecked}
               onToggleCheckbox={toggleCheckbox}
               isSent={isSent}
+              language={language}
             />
             </Route>
             <Route path="/privacy-policy">
-              <PrivacyPolicy />
+              <PrivacyPolicy
+                language={language}
+              />
             </Route>
           </Switch>
-        <Footer />
+        <Footer
+          language={language}
+        />
         <Popup
           diploma={selectedDiploma}
           onClose={closePopup}
@@ -185,6 +222,7 @@ function App() {
         <CookiesNotification
           isNotificationOpen={isNotificationOpen}
           onClickAccept={handleClickAccept}
+          language={language}
         />
       </div>
     </div>

@@ -2,12 +2,15 @@ import iconPhone from '../../images/phone.svg';
 import iconEmail from '../../images/email.svg';
 import iconSkype from '../../images/skype.svg';
 import Section from '../Section/Section';
+import { sectionContacts } from '../../utils/content';
 import './Contacts.css';
 
-function Contacts() {
+function Contacts(props) {
   return (
     <Section classNameSection="contacts">
-      <h2 className="section__title section__title_place_contacts">Контакты</h2>
+      <h2 className="section__title section__title_place_contacts">
+        {props.language === 'Ru' ? sectionContacts.Ru.title : sectionContacts.En.title}
+      </h2>
       <ul className="contacts__list">
         <li>
           <img src={iconPhone} alt="иконка телефон" className="contacts__icon" />

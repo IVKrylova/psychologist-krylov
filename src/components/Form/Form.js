@@ -5,6 +5,7 @@ import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 import Button from '../Button/Button';
 import FormInput from '../FormInput/FormInput';
 import InputError from '../InputError/InputError';
+import { buttonSignUp } from '../../utils/content';
 import './Form.css';
 import '../Link/Link.css';
 
@@ -38,7 +39,10 @@ function Form(props) {
         name="name"
         minLength="2"
         maxLength="100"
-        placeholder="Ваше имя"
+        placeholder={
+          props.language === 'Ru' ?
+          props.content.Ru.inputName : props.content.En.inputName
+        }
         required={true}
         className="form__input"
         value={values.name || ''}
@@ -52,9 +56,10 @@ function Form(props) {
       <InputMask
         type="tel"
         name="phone"
-        minLength="18"
-        maxLength="18"
-        placeholder="Ваш телефон"
+        placeholder={
+          props.language === 'Ru' ?
+          props.content.Ru.inputPhone : props.content.En.inputPhone
+        }
         required={true}
         className="form__input"
         value={values.phone || ''}
@@ -69,7 +74,7 @@ function Form(props) {
       {/* радиокнопки Формат консультации */}
       <fieldset className="form__fieldset" name="type">
         <legend className="form__legend">
-          Формат консультации
+          {props.language === 'Ru' ? props.content.Ru.inputFormat : props.content.En.inputFormat}
         </legend>
         {/* Очно */}
         <FormInput
@@ -83,7 +88,7 @@ function Form(props) {
           onChange={handleChange}
         />
         <label htmlFor="office">
-          Очно
+          {props.language === 'Ru' ? props.content.Ru.formatOffline : props.content.En.formatOffline}
         </label>
         {/* Skype */}
         <FormInput
@@ -97,7 +102,7 @@ function Form(props) {
           onChange={handleChange}
         />
         <label htmlFor="skype">
-          Skype
+          {props.language === 'Ru' ? props.content.Ru.formatOnline : props.content.En.formatOnline}
         </label>
       </fieldset>
       {/* checkbox Пользовательское соглашение */}
@@ -111,19 +116,25 @@ function Form(props) {
           onChange={props.onToggleCheckbox}
         />
         <label htmlFor="agreement">
-          Отправляя сообщение, я даю согласие на обработку своих персональных данных и подтверждаю, что ознакомлен(а)
-          с&ensp;<Link to="/privacy-policy" className="link link_place_form">Политикой конфиденциальности</Link>
+          {props.language === 'Ru' ? props.content.Ru.privacyPolicy : props.content.En.privacyPolicy}
+          &ensp;
+          <Link to="/privacy-policy" className="link link_place_form">
+            {props.language === 'Ru' ? props.content.Ru.link : props.content.En.link}
+          </Link>
         </label>
         <InputError
           classModifier={!props.isChecked ? 'form__input-error_active' : ''}
-          text={!props.isChecked && 'Чтобы записаться, установите этот флажок'}
+          text={
+            !props.isChecked &&
+              props.language === 'Ru' ? props.content.Ru.privacyError : props.content.En.privacyError
+          }
         />
       </fieldset>
       <Button
         buttonType="submit"
         disabled={!isValid || !props.isChecked}
         classNameButton={`form__button ${(!isValid || !props.isChecked) ? 'form__button_disabled' : ''}`}
-        buttonText="Записаться"
+        buttonText={props.language === 'Ru' ? buttonSignUp.Ru : buttonSignUp.En}
       />
     </form>
   );

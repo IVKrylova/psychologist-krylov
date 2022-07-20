@@ -2,34 +2,33 @@ import myPhoto from '../../images/photo-krylov.png';
 import { NavHashLink } from 'react-router-hash-link';
 import Section from '../Section/Section';
 import Button from '../Button/Button';
+import { aboutMe, buttonSignUp } from '../../utils/content';
 import './AboutMe.css';
 import '../Link/Link.css';
 
-function AboutMe() {
+function AboutMe(props) {
   return (
     <Section classNameSection="about-me">
       <div className="about-me__description">
         <p className="about-me__text">
-          Меня зовут Алексей Крылов. Я являюсь практикующим психологом:
-          провожу индивидуальные психологические консультации и
-          групповые тренинги
+          {props.language === 'Ru' ? aboutMe.Ru[0] : aboutMe.En[0]}
         </p>
         <p className="about-me__text">
-          В своей работе я учитываю индивидуальность каждого человека и считаю,
-          что истина о другом человеке не может быть дана изначально, взята
-          из каких бы то ни было книжек и предыдущего опыта, истину, а,
-          следовательно, и решение проблемы можно обнаружить только
-          в совместном творческом поиске и осмыслении
+          {props.language === 'Ru' ? aboutMe.Ru[1] : aboutMe.En[1]}
         </p>
         <NavHashLink smooth to={'/#appointment'} className="link">
           <Button
             classNameButton="about-me__button"
             buttonType="button"
-            buttonText="Записаться"
+            buttonText={props.language === 'Ru' ? buttonSignUp.Ru : buttonSignUp.En}
           />
         </NavHashLink>
       </div>
-      <img className="about-me__photo" src={myPhoto} alt="Психолог Алексей Крылов" />
+      <img
+        className="about-me__photo"
+        src={myPhoto}
+        alt={props.language === 'Ru' ? aboutMe.Ru[2] : aboutMe.En[2]}
+      />
     </Section>
   );
 }
