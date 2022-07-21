@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -170,6 +171,7 @@ function App() {
     <div className="site-background"
       onClick={handleBackgroundClose}>
       <div className="page">
+        <Helmet htmlAttributes={{ lang : language === 'Ru' ? 'ru' : 'en' }} />
         <Header
           language={language}
           clickOnLangRu={handleClickOnLangRu}
