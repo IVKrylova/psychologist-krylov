@@ -46,10 +46,6 @@
   color: #fff;
 }
 
-.menu_visible {
-  display: block;
-}
-
 @media screen and (max-width: 990px) {
   .menu {
     font-size: 18px;
@@ -77,6 +73,10 @@
     background-color: #151740;
     box-sizing: border-box;
     border: 1px solid #151740;
+  }
+
+  .menu_visible {
+    display: block;
   }
 
   .menu__item:not(:first-child) {
