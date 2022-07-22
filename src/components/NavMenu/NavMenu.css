@@ -28,7 +28,7 @@
   padding: 0;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 13fr 28fr 25fr 17fr 17fr;
+  grid-template-columns: 2fr 3fr 3fr 2fr 2fr;
   text-align: center;
 }
 
@@ -58,9 +58,9 @@
   .nav-menu__icon-menu {
     display: block;
     grid-area: header__icon-menu;
-    margin: -35px 0 0 4%;
-    width: 24px;
-    height: 24px;
+    margin: -30px 0 0 4%;
+    width: 20px;
+    height: 20px;
   }
 
   .menu {

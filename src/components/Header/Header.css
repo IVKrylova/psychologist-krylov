@@ -107,16 +107,27 @@
       'header__title header__lang-links'
       'header__icon-menu header__contacts';
   }
+
+  .header__title {
+    font-size: 20px;
+  }
+
+  .header__lang-links {
+    font-size: 16px;
+    margin-right: 8%;
+  }
+
+  .header__contact {
+    font-size: 20px;
+  }
+
+  .header__icon {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @media screen and (max-width: 525px) {
-  .header {
-    grid-template-areas:
-      'header__lang-links header__lang-links'
-      'header__title header__title'
-      'header__icon-menu header__contacts';
-  }
-
   .header__contact {
     font-size: 18px;
   }
@@ -127,12 +138,25 @@
   }
 
   .header__lang-links {
-    font-size: 16px;
     column-gap: 10px;
   }
 
   .header__title {
     margin-top: 15px;
     margin-left: 4%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .header {
+    grid-template-areas:
+      'header__lang-links header__lang-links'
+      'header__title header__title'
+      'header__icon-menu header__contacts';
+  }
+
+  .header__lang-links {
+    font-size: 14px;
+    margin-right: 4%;
   }
 }

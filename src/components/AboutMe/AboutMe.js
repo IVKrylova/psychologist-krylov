@@ -16,7 +16,7 @@ function AboutMe(props) {
         <p className="about-me__text">
           {props.language === 'Ru' ? aboutMe.Ru[1] : aboutMe.En[1]}
         </p>
-        <NavHashLink smooth to={'/#appointment'} className="link">
+        <NavHashLink smooth to={'/#appointment'} className="link about-me__link">
           <Button
             classNameButton="about-me__button"
             buttonType="button"
