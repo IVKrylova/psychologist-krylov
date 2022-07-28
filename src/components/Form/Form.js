@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import InputMask from 'react-input-mask';
+import Reaptcha from 'reaptcha';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation';
 import Button from '../Button/Button';
 import FormInput from '../FormInput/FormInput';
@@ -12,6 +13,16 @@ import '../Link/Link.css';
 function Form(props) {
   // запускаем валидацию формы
   const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
+  // стейт токена из captcha
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const captchaRef = useRef(captchaToken);
+
+  // функция проверки токеза из captcha
+  const verify = _ => {
+    captchaRef.current.getResponse()
+      .then(res => setCaptchaToken(res))
+      .catch(err => console.log(err));
+  }
 
   // обраотчик формы
   function handleSubmit(evt) {
@@ -111,6 +122,7 @@ function Form(props) {
           className="form__input-checkbox"
           type="checkbox"
           id="agreement"
+          name="checkboxPrivacy"
           required={true}
           checked={props.isChecked ? true : false}
           onChange={props.onToggleCheckbox}
@@ -130,6 +142,11 @@ function Form(props) {
           }
         />
       </fieldset>
+      <Reaptcha
+        sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+        ref={captchaRef}
+        onVerify={verify}
+      />
       <Button
         buttonType="submit"
         disabled={!isValid || !props.isChecked}
