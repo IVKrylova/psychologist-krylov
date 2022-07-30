@@ -33,7 +33,7 @@ function Form(props) {
     props.onMakeAppointment({
       name: values.name,
       phone: values.phone,
-      type: values.type,
+      type: 'не задано' || values.type,
     });
   }
 

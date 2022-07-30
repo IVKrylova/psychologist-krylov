@@ -66,6 +66,7 @@ function Main(props) {
         isChecked={props.isChecked}
         isSent={props.isSent}
         language={props.language}
+        message={props.message}
       />
       <Contacts
         language={props.language}

@@ -11,6 +11,7 @@ import { COOKIES_NAME } from '../../utils/constants';
 import { diplomas, problems } from '../../utils/content';
 import Cookies from 'js-cookie';
 import { Route, Switch } from 'react-router-dom';
+import { mainApi } from '../../utils/mainApi';
 import './App.css';
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   // стейт языка страницы
   const [language, setLanguage] = useState('');
+  // сообщение об успешной отправке формы или об ошибке
+  const [message, setMessage] = useState('');
 
   // установка языка страницы при первой загрузке
   useEffect(_=> {
@@ -121,8 +124,15 @@ function App() {
 
   // обработчик формы записи на прием
   const handleMakeAppointment = data => {
-    /////////////////////////////
-    setIsSent(true);
+    mainApi.sendDataFromForm(data.name, data.phone, data.type)
+      .then(_ => {
+        setMessage('Спасибо! Ваша заявка отправлена');
+        setIsSent(true);
+      })
+      .catch(err => {
+        console.log(err);
+        setMessage('Что-то пошло не так...')
+      });
   }
 
   // обработчик клика по кнопке Очная сессия
@@ -205,6 +215,7 @@ function App() {
               onToggleCheckbox={toggleCheckbox}
               isSent={isSent}
               language={language}
+              message={message}
             />
             </Route>
             <Route path="/privacy-policy">

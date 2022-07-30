@@ -1,5 +1,6 @@
 import Section from '../Section/Section';
 import Form from '../Form/Form';
+import Message from '../Message/Message';
 import { sectionAppointment } from '../../utils/content';
 import './Appointment.css';
 
@@ -21,6 +22,9 @@ function Appointment(props) {
         content={sectionAppointment}
         language={props.language}
       />
+    <Message
+      message={props.message}
+    />
     </Section>
   );
 }
