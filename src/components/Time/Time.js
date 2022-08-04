@@ -7,7 +7,8 @@ function Time(props) {
  const [takenTime, setTakenTime] = useState('');
 
   useEffect(_ => {
-
+    // сбрасываем значение выбранного времени для каждого нового выбранного дня
+    setTakenTime('')
 
     ///////////////// для разработки
     const calendarEntries = localStorage.calendarEntries && JSON.parse(localStorage.calendarEntries);
@@ -33,7 +34,7 @@ function Time(props) {
 
 
     ///////////////// для разработки
-    //  localStorage.setItem('calendarEntries', JSON.stringify([{month: "Август", day: 7, time: "15:00"}, {month: "August", day: 5, time: "12 p.m."}, {month: "September", day: 8, time: "12 p.m."}, {month: "Сентябрь", day: 10, time: "8:00"}]))
+    ///  localStorage.setItem('calendarEntries', JSON.stringify([{month: "Август", day: 7, time: "15:00"}, {month: "Август", day: 7, time: "10:00"}, {month: "August", day: 5, time: "12 p.m."}, {month: "September", day: 8, time: "12 p.m."}, {month: "Сентябрь", day: 10, time: "8:00"}]))
 
     // проверяем запись для каждого времени
     calendarEntries && calendarEntries.forEach(el => {
