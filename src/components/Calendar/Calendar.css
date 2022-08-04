@@ -1,0 +1,43 @@
+.calendar {
+  color: #fff;
+  max-width: 1180px;
+  align-self: center;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.calendar__month-names-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  column-gap: 30px;
+}
+
+.calendar__month-name:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.calendar__month-name_selected {
+  text-decoration: underline;
+}
+
+.calendar__month-list {
+  padding: 0;
+  margin: 30px 0 0;
+  list-style-type: none;
+}
+
+.calendar__timing {
+  padding: 0;
+  margin: 50px 0 0;
+  box-sizing: border-box;
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.calendar__timing_hidden {
+  display: none;
+}

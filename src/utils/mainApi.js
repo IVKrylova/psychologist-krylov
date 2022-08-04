@@ -14,7 +14,15 @@ class MainApi {
       headers: this.headers,
       body: JSON.stringify({ name, phone, type })
     })
-    .then(checkResponse)
+    .then(checkResponse);
+  }
+
+  // метод загрузки данных для календаря
+  getAppointments() {
+    return fetch(`${this.baseUrl}/calendar`, {
+      headers: this.headers,
+    })
+    .then(checkResponse);
   }
 }
 

@@ -360,6 +360,7 @@ export const sectionAppointment = {
     privacyPolicy: 'Отправляя сообщение, я даю согласие на обработку своих персональных данных и подтверждаю, что ознакомлен(а) с',
     link: 'Политикой конфиденциальности',
     privacyError: 'Чтобы записаться, установите этот флажок',
+    linkToCalendar: 'Записаться на онлайн-консультацию через календарь',
   },
   En: {
     title: 'Sign up for a consultation',
@@ -371,6 +372,7 @@ export const sectionAppointment = {
     privacyPolicy: 'By sending a message, I consent to the processing of my personal data and confirm that I have read',
     link: 'the Privacy Policy',
     privacyError: 'To sign up, check this box',
+    linkToCalendar: 'Sign up on online consultation in the calendar',
   },
 };
 
@@ -503,5 +505,18 @@ export const privacyPolicy = {
     41: '8.2. This document will reflect any changes in the personal data processing policy by the Operator. The Policy is valid indefinitely until it is replaced by a new version.',
     42: '8.3. The current version of the Policy is located on the web site',
     button: 'Back',
+  },
+};
+
+export const calendar = {
+  Ru: {
+    year: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+    week: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    time: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'],
+  },
+  En: {
+    year: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    week: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    time: ['8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.'],
   },
 };

@@ -3,6 +3,7 @@ import Form from '../Form/Form';
 import Message from '../Message/Message';
 import { sectionAppointment } from '../../utils/content';
 import './Appointment.css';
+import { Link } from 'react-router-dom';
 
 function Appointment(props) {
   return (
@@ -22,9 +23,12 @@ function Appointment(props) {
         content={sectionAppointment}
         language={props.language}
       />
-    <Message
-      message={props.message}
-    />
+      <Message
+        message={props.message}
+      />
+      <Link to="/calendar" className="link appointment__link-to-calendar">
+        {props.language === 'Ru' ? sectionAppointment.Ru.linkToCalendar : sectionAppointment.En.linkToCalendar}
+      </Link>
     </Section>
   );
 }

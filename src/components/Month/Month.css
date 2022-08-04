@@ -1,0 +1,26 @@
+.month__days-of-week-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  font-size: 20px;
+  text-align: right;
+}
+
+.month__day-of-week {
+  width: 70px;
+  box-sizing: border-box;
+  padding: 0 10px 10px 0;
+}
+
+.month__days {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.month_hidden {
+  display: none;
+}

@@ -1,0 +1,32 @@
+.time {
+  width: 80px;
+  box-sizing: border-box;
+  border: solid 1px #151740;
+}
+
+.time__hour {
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin: 0;
+  text-align: center;
+  background-color: #28334e;
+  color: #fff;
+}
+
+.time__hour:hover {
+  cursor: pointer;
+  background-color: #151750;
+}
+
+.time__hour_disabled {
+  background-color: #151740;
+}
+
+.time__hour_disabled:hover {
+  cursor: default;
+  background-color: #151740;
+}

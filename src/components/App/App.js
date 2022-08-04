@@ -7,6 +7,7 @@ import NavMenu from '../NavMenu/NavMenu';
 import Popup from '../Popup/Popup';
 import CookiesNotification from '../CookiesNotification/CookiesNotification';
 import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
+import Calendar from '../Calendar/Calendar';
 import { COOKIES_NAME } from '../../utils/constants';
 import { diplomas, problems } from '../../utils/content';
 import Cookies from 'js-cookie';
@@ -36,8 +37,13 @@ function App() {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   // стейт языка страницы
   const [language, setLanguage] = useState('');
-  // сообщение об успешной отправке формы или об ошибке
+  // стейт сообщения об успешной отправке формы или об ошибке
   const [message, setMessage] = useState('');
+  // стейты выбранного месяца в календаре
+  const [isFirstMonthChecked, setIsFirstMonthChecked] = useState(true);
+  const [isSecondMonthChecked, setIsSecondMonthChecked] = useState(false);
+  // стейт выбранного дня в календаре
+  const [selectedDay, setSelectedDay] = useState({ day: '', month: '' });
 
   // установка языка страницы при первой загрузке
   useEffect(_=> {
@@ -160,6 +166,23 @@ function App() {
     setIsNotificationOpen(false);
   }
 
+  // обработчик кдика по первому месяцу
+  const handleClickFirstMonth = _ => {
+    setIsFirstMonthChecked(true);
+    setIsSecondMonthChecked(false);
+  }
+
+  // обработчик клика по второму месяцу
+  const handleClickSecondMonth = _ => {
+    setIsFirstMonthChecked(false);
+    setIsSecondMonthChecked(true);
+  }
+
+  // обработчик клика по дню в календаре
+  const handleClickDay = props => {
+    setSelectedDay(props);
+  }
+
   // изменение состояния окна уведомнелия о cookies
   useEffect(_ => {
     if (!Cookies.get(COOKIES_NAME)) setIsNotificationOpen(true);
@@ -217,6 +240,19 @@ function App() {
               language={language}
               message={message}
             />
+            </Route>
+            <Route path="/calendar">
+              <Calendar
+                language={language}
+                isFirstMonthChecked={isFirstMonthChecked}
+                isSecondMonthChecked={isSecondMonthChecked}
+                onClickFirstMonth={handleClickFirstMonth}
+                onClickSecondMonth={handleClickSecondMonth}
+                message={message}
+                setMessage={setMessage}
+                selectedDay={selectedDay}
+                onClickDay={handleClickDay}
+              />
             </Route>
             <Route path="/privacy-policy">
               <PrivacyPolicy
