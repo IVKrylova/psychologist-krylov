@@ -14,6 +14,7 @@ import Cookies from 'js-cookie';
 import { Route, Switch } from 'react-router-dom';
 import { mainApi } from '../../utils/mainApi';
 import './App.css';
+import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
 function App() {
   // стейты разворачивающегося меню
@@ -44,6 +45,8 @@ function App() {
   const [isSecondMonthChecked, setIsSecondMonthChecked] = useState(false);
   // стейт выбранного дня в календаре
   const [selectedDay, setSelectedDay] = useState({ day: '', month: '' });
+  // стейт popup с формой
+  const [isOpenPopupWithForm, setIsOpenPopupWithForm] = useState(false);
 
   // установка языка страницы при первой загрузке
   useEffect(_=> {
@@ -116,9 +119,10 @@ function App() {
     setSelectedDiploma(diploma);
   }
 
-  // закрытие popup
+  // закрытие всех popup
   const closePopup = _ => {
     setSelectedDiploma({...{RuTitle: '', EnTitle: '', img: '', id: ''}});
+    setIsOpenPopupWithForm(false);
   }
 
   // обработчик закрытия popup при клике вне его
@@ -166,7 +170,7 @@ function App() {
     setIsNotificationOpen(false);
   }
 
-  // обработчик кдика по первому месяцу
+  // обработчик клика по первому месяцу
   const handleClickFirstMonth = _ => {
     setIsFirstMonthChecked(true);
     setIsSecondMonthChecked(false);
@@ -198,6 +202,11 @@ function App() {
 
     return _ => document.removeEventListener("keydown", handleEscClose);
   }, []);
+
+  // обработчик открытия popup c формой
+  const onClickTime = _ => {
+    setIsOpenPopupWithForm(true);
+  }
 
   return (
     <div className="site-background"
@@ -252,6 +261,7 @@ function App() {
                 setMessage={setMessage}
                 selectedDay={selectedDay}
                 onClickDay={handleClickDay}
+                onClickTime={onClickTime}
               />
             </Route>
             <Route path="/privacy-policy">
@@ -271,6 +281,19 @@ function App() {
           isNotificationOpen={isNotificationOpen}
           onClickAccept={handleClickAccept}
           language={language}
+        />
+        <PopupWithForm
+          onClickButtonOffline={handleClickButtonOffline}
+          isRadioOfflineChecked={isRadioOfflineChecked}
+          onClickButtonOnline={handleClickButtonOnline}
+          isRadioOnlineChecked={isRadioOnlineChecked}
+          onMakeAppointment={handleMakeAppointment}
+          isChecked={isChecked}
+          onToggleCheckbox={toggleCheckbox}
+          isSent={isSent}
+          language={language}
+          onClose={closePopup}
+          isOpenPopupWithForm={isOpenPopupWithForm}
         />
       </div>
     </div>

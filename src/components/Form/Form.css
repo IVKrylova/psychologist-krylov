@@ -45,6 +45,10 @@
   display: block;
 }
 
+.form__fieldset_hidden {
+  display: none;
+}
+
 @media screen and (max-width: 700px) {
   .form {
     margin-bottom: 50px;

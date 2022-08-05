@@ -45,9 +45,23 @@ function Time(props) {
     });
   }, [props.selectedDay.day, props.selectedDay.month, takenTime, props.language]);
 
+  // обработчик клика кнопке с временем
+  const handleClick = _ => {
+    props.onClickTime({
+      day: props.selectedDay.time,
+      month: props.selectedDay.month,
+      type: 'online',
+      time: props.hour,
+    });
+  }
+
   return (
     <li className="time">
-      <button className={`time__hour ${takenTime === props.hour ? 'time__hour_disabled' : ''}`} type="button">
+      <button
+        className={`time__hour ${takenTime === props.hour ? 'time__hour_disabled' : ''}`}
+        type="button"
+        onClick={handleClick}
+      >
         {props.hour}
       </button>
     </li>

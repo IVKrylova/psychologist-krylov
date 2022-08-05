@@ -17,7 +17,7 @@ function Form(props) {
   const [captchaToken, setCaptchaToken] = useState(null);
   const captchaRef = useRef(captchaToken);
 
-  // функция проверки токеза из captcha
+  // функция проверки токена из captcha
   const verify = _ => {
     captchaRef.current.getResponse()
       .then(res => setCaptchaToken(res))
@@ -83,7 +83,7 @@ function Form(props) {
         text={!isValid && errors.phone}
       />
       {/* радиокнопки Формат консультации */}
-      <fieldset className="form__fieldset" name="type">
+      <fieldset className={`form__fieldset ${props.fieldsetModifier}`} name="type">
         <legend className="form__legend">
           {props.language === 'Ru' ? props.content.Ru.inputFormat : props.content.En.inputFormat}
         </legend>

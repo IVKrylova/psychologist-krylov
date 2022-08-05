@@ -27,6 +27,14 @@
   max-height: 75vh;
 }
 
+.popup__header {
+  color: #fff;
+  font-size: 20px;
+  font-weight: normal;
+  justify-self: center;
+  align-self: end;
+}
+
 .popup_background_opacity {
   background-color: rgba(0, 0, 0, .9);
 }
@@ -35,4 +43,8 @@
   visibility: visible;
   opacity: 1;
   transition: visibility .95s, opacity .7s linear;
+}
+
+.popup_background_blue {
+  background-color: #283345;
 }

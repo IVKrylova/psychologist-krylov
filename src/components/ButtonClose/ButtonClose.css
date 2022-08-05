@@ -20,6 +20,11 @@
   transition: .7s;
 }
 
+.button-close_place_popup-with-form {
+  top: 40px;
+  right: 40px;
+}
+
 @media screen and (max-width: 640px) {
   .button-close {
     width: 20px;

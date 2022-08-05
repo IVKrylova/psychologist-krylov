@@ -97,6 +97,7 @@ function Calendar(props) {
                   key={index}
                   language={props.language}
                   selectedDay={props.selectedDay}
+                  onClickTime={props.onClickTime}
                 />
               );
             })
@@ -107,6 +108,7 @@ function Calendar(props) {
                   key={index}
                   language={props.language}
                   selectedDay={props.selectedDay}
+                  onClickTime={props.onClickTime}
                 />
               );
             })
