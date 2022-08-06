@@ -4,16 +4,13 @@ import './Time.css';
 
 function Time(props) {
   // стейт времени
- const [takenTime, setTakenTime] = useState('');
+  const [takenTime, setTakenTime] = useState('');
 
   useEffect(_ => {
     // сбрасываем значение выбранного времени для каждого нового выбранного дня
     setTakenTime('')
-
-    ///////////////// для разработки
+    // получаем записи в календаре
     const calendarEntries = localStorage.calendarEntries && JSON.parse(localStorage.calendarEntries);
-
-
     // получаем имя месяца на русском
     const monthRu = props.language === 'Ru'
       ? props.selectedDay.month
@@ -46,7 +43,7 @@ function Time(props) {
   }, [props.selectedDay.day, props.selectedDay.month, takenTime, props.language]);
 
   // обработчик клика кнопке с временем
-  const handleClick = _ => {
+  const handleClick                                           = _ => {
     props.onClickTime({
       day: props.selectedDay.time,
       month: props.selectedDay.month,

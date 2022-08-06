@@ -47,6 +47,12 @@ function App() {
   const [selectedDay, setSelectedDay] = useState({ day: '', month: '' });
   // стейт popup с формой
   const [isOpenPopupWithForm, setIsOpenPopupWithForm] = useState(false);
+  // стейт выбранного времени
+  const [takenTime, setTakenTime] = useState('');
+  // стейт типа косультации для записи через календарь
+  const [typeConsultation, setTypeConsyltation] = useState('');
+  // стейт формы в календаре
+  const [isSentFromCalendar, setIsSentFromCalendar] = useState(false);
 
   // установка языка страницы при первой загрузке
   useEffect(_=> {
@@ -204,8 +210,33 @@ function App() {
   }, []);
 
   // обработчик открытия popup c формой
-  const onClickTime = _ => {
+  const handleClickTime = props => {
     setIsOpenPopupWithForm(true);
+    setTakenTime(props.time);
+    setTypeConsyltation(props.type);
+    setMessage('');
+  }
+
+  // обработчик записи на прием через календарь
+  const signUpInCalendar = props => {
+    Promise.all([
+      // отправляем форму в базу данных
+      mainApi.signUpInCalendar(props.day, props.month, props.time, props.name, props.phone, props.type),
+      // отправляем сообщение на почту
+      mainApi.sendDataFromCalendar(props.day, props.month, props.time, props.name, props.phone, props.type)
+    ])
+        .then(([appointment, info]) => {
+          setMessage(info);
+          const { day, month, time } = appointment;
+          // добавляем новую запись в localstorage
+          const calendarEntries = JSON.parse(localStorage.calendarEntries).push({ day, month, time });
+          localStorage.setItem('calendarEntries', JSON.stringify(calendarEntries));
+          setIsSentFromCalendar(true);
+        })
+        .catch(err => {
+          console.log(err);
+          setMessage('Что-то пошло не так...');
+        });
   }
 
   return (
@@ -261,7 +292,7 @@ function App() {
                 setMessage={setMessage}
                 selectedDay={selectedDay}
                 onClickDay={handleClickDay}
-                onClickTime={onClickTime}
+                onClickTime={handleClickTime}
               />
             </Route>
             <Route path="/privacy-policy">
@@ -287,13 +318,18 @@ function App() {
           isRadioOfflineChecked={isRadioOfflineChecked}
           onClickButtonOnline={handleClickButtonOnline}
           isRadioOnlineChecked={isRadioOnlineChecked}
-          onMakeAppointment={handleMakeAppointment}
+          onMakeAppointment={signUpInCalendar}
           isChecked={isChecked}
           onToggleCheckbox={toggleCheckbox}
           isSent={isSent}
           language={language}
           onClose={closePopup}
           isOpenPopupWithForm={isOpenPopupWithForm}
+          selectedDay={selectedDay}
+          takenTime={takenTime}
+          typeConsultation={typeConsultation}
+          message={message}
+          isSentFromCalendar={isSentFromCalendar}
         />
       </div>
     </div>

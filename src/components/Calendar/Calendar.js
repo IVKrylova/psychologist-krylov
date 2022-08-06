@@ -41,8 +41,6 @@ function Calendar(props) {
     mainApi.getAppointments()
       .then(data => {
         setCalendarEntries(data);
-
-        ///////////////// для разработки
         localStorage.setItem('calendarEntries', JSON.stringify(data));
       })
       .catch(err => {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import InputMask from 'react-input-mask';
 import Reaptcha from 'reaptcha';
 import { useFormAndValidation } from '../../hooks/useFormAndValidation';
@@ -16,6 +16,9 @@ function Form(props) {
   // стейт токена из captcha
   const [captchaToken, setCaptchaToken] = useState(null);
   const captchaRef = useRef(captchaToken);
+  // получаем текущий URL
+  const location = useLocation();
+  const currentUrl = location.pathname;
 
   // функция проверки токена из captcha
   const verify = _ => {
@@ -30,17 +33,29 @@ function Form(props) {
     evt.preventDefault();
 
     // передаём значения управляемых компонентов во внешний обработчик
-    props.onMakeAppointment({
-      name: values.name,
-      phone: values.phone,
-      type: 'не задано' || values.type,
-    });
+    if (currentUrl === '/') {
+      props.onMakeAppointment({
+        name: values.name,
+        phone: values.phone,
+        type: 'не задано' || values.type,
+      });
+    }
+    if (currentUrl === '/calendar') {
+      props.onMakeAppointment({
+        name: values.name,
+        phone: values.phone,
+        day: props.selectedDay.day,
+        month: props.selectedDay.month,
+        time: props.takenTime,
+        type: props.typeConsultation,
+      });
+    }
   }
 
   // сброс значений инпутов формы
   useEffect(_ => {
     resetForm();
-  }, [props.isSent]);
+  }, [props.isSent, props.isSentFromCalendar]);
 
   return (
     <form className="form" name="appointment" onSubmit={handleSubmit}>

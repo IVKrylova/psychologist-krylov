@@ -1,4 +1,5 @@
 import ButtonClose from '../ButtonClose/ButtonClose';
+import Message from '../Message/Message';
 import { sectionAppointment, popupWithForm } from '../../utils/content';
 import Form from '../Form/Form';
 import '../Popup/Popup.css';
@@ -26,10 +27,16 @@ function PopupWithForm(props) {
         onMakeAppointment={props.onMakeAppointment}
         onToggleCheckbox={props.onToggleCheckbox}
         isChecked={props.isChecked}
-        isSent={props.isSent}
+        isSentFromCalendar={props.isSentFromCalendar}
         content={sectionAppointment}
         language={props.language}
         fieldsetModifier='form__fieldset_hidden'
+        selectedDay={props.selectedDay}
+        takenTime={props.takenTime}
+        typeConsultation={props.typeConsultation}
+      />
+      <Message
+        message={props.message}
       />
     </section>
   );
