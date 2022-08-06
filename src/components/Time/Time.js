@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react';
 import { calendar } from '../../utils/content';
+import { getPastTime } from '../../utils/utils';
+import { TIME, INACTIVE_HOURS } from '../../utils/constants';
 import './Time.css';
 
 function Time(props) {
-  // стейт времени
+  // стейт занятого времени
   const [takenTime, setTakenTime] = useState('');
+  // стейт прошедшего времени
+  const [pastTime, setPastTime] = useState(false);
+  // модификатор для времени
+  const classModifier = (takenTime === props.hour || pastTime) ? 'time__hour_disabled' : '';
 
+  // проверяем каждое время
   useEffect(_ => {
     // сбрасываем значение выбранного времени для каждого нового выбранного дня
     setTakenTime('')
@@ -19,7 +26,6 @@ function Time(props) {
     const monthEn = props.language === 'En'
       ? props.selectedDay.month
       : calendar.En.year[calendar.Ru.year.indexOf(props.selectedDay.month)];
-
     // получаем время для русского языка
     const hourRu = props.language === 'Ru'
       ? props.hour
@@ -28,10 +34,24 @@ function Time(props) {
     const hourEn = props.language === 'En'
       ? props.hour
       : calendar.En.time[calendar.Ru.time.indexOf(props.hour)];
-
-
-    ///////////////// для разработки
-    ///  localStorage.setItem('calendarEntries', JSON.stringify([{month: "Август", day: 7, time: "15:00"}, {month: "Август", day: 7, time: "10:00"}, {month: "August", day: 5, time: "12 p.m."}, {month: "September", day: 8, time: "12 p.m."}, {month: "Сентябрь", day: 10, time: "8:00"}]))
+    // получаем название текущего месяца на русском
+    const todayMonthRu = props.language === 'Ru'
+      ? localStorage.todayMont
+      : calendar.Ru.year[calendar.En.year.indexOf(localStorage.todayMont)];
+    // получаем название текущего месяца на английском
+    const todayMonthEn = props.language === 'En'
+      ? localStorage.todayMont
+      : calendar.En.year[calendar.Ru.year.indexOf(localStorage.todayMont)];
+    // получаем текущий час
+    const currentTime = getPastTime();
+    // получаем индекс текущего часа для английского языка
+    const indexCurrentTimeEn = calendar.En.time.indexOf(TIME.En[currentTime]);
+    // получаем индекс текущего часа для русского языка
+    const indexCurrentTimeRu = calendar.Ru.time.indexOf(TIME.Ru[currentTime]);
+    // получаем массив с прошедшим временем
+    const pastHours = props.language === 'Ru'
+      ? (indexCurrentTimeRu !== -1 && calendar.Ru.time.slice(0, (indexCurrentTimeRu + INACTIVE_HOURS)))
+      : (indexCurrentTimeEn !== -1 && calendar.En.time.slice(0, (indexCurrentTimeEn + INACTIVE_HOURS)));
 
     // проверяем запись для каждого времени
     calendarEntries && calendarEntries.forEach(el => {
@@ -40,10 +60,19 @@ function Time(props) {
         && (hourRu === el.time || hourEn === el.time))
           && setTakenTime(props.hour);
     });
+
+    // проверяем прошедшее время текущего дня
+    pastHours && pastHours.forEach(el => {
+      ((todayMonthEn === props.selectedDay.month || todayMonthRu === props.selectedDay.month)
+        && localStorage.todayDay === props.selectedDay.day
+        && props.hour === el)
+          && setPastTime(true);
+    });
+
   }, [props.selectedDay.day, props.selectedDay.month, takenTime, props.language]);
 
   // обработчик клика кнопке с временем
-  const handleClick                                           = _ => {
+  const handleClick = _ => {
     props.onClickTime({
       day: props.selectedDay.time,
       month: props.selectedDay.month,
@@ -55,7 +84,7 @@ function Time(props) {
   return (
     <li className="time">
       <button
-        className={`time__hour ${takenTime === props.hour ? 'time__hour_disabled' : ''}`}
+        className={`time__hour ${classModifier}`}
         type="button"
         onClick={handleClick}
       >

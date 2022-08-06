@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Section from '../Section/Section';
 import Month from '../Month/Month';
 import { calendar } from '../../utils/content';
-import { getMonth } from '../../utils/utils';
+import { getMonth, getPastDays } from '../../utils/utils';
 import { mainApi } from '../../utils/mainApi';
 import './Calendar.css';
 import Time from '../Time/Time';
@@ -34,6 +34,8 @@ function Calendar(props) {
   const nameFirstMonth = props.language === 'Ru' ? calendar.Ru.year[numberOfCurrentMonth] : calendar.En.year[numberOfCurrentMonth];
   // название второго месяца
   const nameSecondtMonth = props.language === 'Ru' ? calendar.Ru.year[numberOfNextMonth] : calendar.En.year[numberOfNextMonth];
+  // получаем массив с прошедшими днями
+  const pastDays = getPastDays();
 
   // загрузка данных о записи при открытии страницы
   useEffect(_ => {
@@ -48,6 +50,13 @@ function Calendar(props) {
         props.setMessage('При загрузке данных произошла ошибка');
       });
   }, []);
+
+  // устанавливаем текущий день
+  useEffect(_ => {
+    const today = new Date();
+    localStorage.setItem('todayDay', today.getDay());
+    localStorage.setItem('todayMonth', props.language === 'Ru' ? calendar.Ru.year[today.getMonth()] : calendar.En.year[today.getMonth()]);
+  }, [props.language]);
 
   return (
     <Section classNameSection="calendar">
@@ -71,6 +80,7 @@ function Calendar(props) {
           nameMonthRu={calendar.Ru.year[numberOfCurrentMonth]}
           nameMonthEn={calendar.En.year[numberOfCurrentMonth]}
           onClickDay={props.onClickDay}
+          pastDays={pastDays}
         />
         <Month
           amountOfDays={nextMonth.days}

@@ -51,4 +51,34 @@ export const defineTakenDay = (appointments, monthRu, monthEn, day) => {
   });
 
   return (countAppointments === 12);
+};
+
+// функция получения прошедших дней
+export const getPastDays = _ => {
+  // получаем текущий день
+  const today = new Date();
+  // получаем текущий месяц
+  const month = today.getMonth();
+  // получаем текущий год
+  const year = today.getFullYear();
+  // получаем первый день месяца
+  const firstDay = new Date(year, month, 1);
+  // получаем разницу в милесекундах, переводим в дни
+  const residualDays = Math.trunc((today - firstDay) / 1000 / 3600 / 24);
+  // получаем массив прошедших дней
+  const days = [];
+  for (let i = 1; i <= residualDays; i++) {
+    days.push(i);
+  }
+
+  return days;
+}
+
+// функция получения прошедшего времени
+export const getPastTime = _ => {
+  // получаем текущий день
+  const today = new Date();
+
+  // получаем текущий час
+  return today.getHours();
 }

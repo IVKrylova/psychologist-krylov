@@ -5,14 +5,21 @@ import './Day.css';
 function Day(props) {
   // стейт записей на день
   const [isTakenDay, setIsTakenDay] = useState(false);
+  // стейт прошедшего дня
+  const [isPastDay, setIsPastDay] = useState(false);
   // модификатор для ячейки
-  const classNameModifier = (props.day === '' || isTakenDay) ? 'cell__day_disabled' : '';
+  const classNameModifier = (props.day === '' || isTakenDay || isPastDay) ? 'cell__day_disabled' : '';
   // активная/неактивная кнопка
-  const buttonDisabled = (props.day === '' || isTakenDay) ? true : false;
+  const buttonDisabled = (props.day === '' || isTakenDay || isPastDay) ? true : false;
 
   // при загрузке проверяем, является ли день занятым
   useEffect(_ => {
     setIsTakenDay(defineTakenDay(props.calendarEntries, props.nameMonthRu, props.nameMonthEn, props.day));
+  }, []);
+
+  // при загрузке проверяем, прошел ли день
+  useEffect(_ => {
+    setIsPastDay(props.pastDays && props.pastDays.includes(props.day) ? true : false);
   }, []);
 
   // обработчик клика по дню в календаре

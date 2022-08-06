@@ -39,6 +39,7 @@ function Month(props) {
                 nameMonthEn={props.nameMonthEn}
                 onClickDay={props.onClickDay}
                 nameMonth={props.nameMonth}
+                pastDays={props.pastDays}
               />
             );
           })
