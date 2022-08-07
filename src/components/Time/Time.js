@@ -11,6 +11,8 @@ const Time = props => {
   const [pastTime, setPastTime] = useState(false);
   // модификатор для времени
   const classModifier = (takenTime === props.hour || pastTime) ? 'time__hour_disabled' : '';
+  // активная/неактивная кнопка
+  const buttonDisabled = (takenTime === props.hour || pastTime) ? true : false;
 
   // проверяем каждое время
   useEffect(_ => {
@@ -64,13 +66,19 @@ const Time = props => {
     });
 
     // проверяем прошедшее время текущего дня
-    pastHours && pastHours.forEach(el => {
-      ((todayMonthEn === props.selectedDay.month || todayMonthRu === props.selectedDay.month)
-        && localStorage.todayDay === props.selectedDay.day.toString()
-        && props.hour === el)
-          && setPastTime(true);
-    });
-
+    if ((TIME.returned.indexOf(currentTime) > 20)
+      && (todayMonthEn === props.selectedDay.month || todayMonthRu === props.selectedDay.month)
+      && localStorage.todayDay === props.selectedDay.day.toString()
+    ) {
+      setPastTime(true);
+    } else {
+      pastHours && pastHours.forEach(el => {
+        ((todayMonthEn === props.selectedDay.month || todayMonthRu === props.selectedDay.month)
+          && localStorage.todayDay === props.selectedDay.day.toString()
+          && props.hour === el)
+            && setPastTime(true);
+      });
+    }
   }, [props.selectedDay.day, props.selectedDay.month, takenTime, props.language]);
 
   // обработчик клика кнопке с временем
@@ -89,6 +97,7 @@ const Time = props => {
         className={`time__hour ${classModifier}`}
         type="button"
         onClick={handleClick}
+        disabled={buttonDisabled}
       >
         {props.hour}
       </button>
