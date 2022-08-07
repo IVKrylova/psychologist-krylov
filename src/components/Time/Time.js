@@ -16,6 +16,8 @@ function Time(props) {
   useEffect(_ => {
     // сбрасываем значение выбранного времени для каждого нового выбранного дня
     setTakenTime('')
+    // сбрасываем значение для прошедшего времени
+    setPastTime(false);
     // получаем записи в календаре
     const calendarEntries = localStorage.calendarEntries && JSON.parse(localStorage.calendarEntries);
     // получаем имя месяца на русском
