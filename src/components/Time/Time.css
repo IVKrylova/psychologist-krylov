@@ -1,5 +1,5 @@
 .time {
-  width: 80px;
+  width: 100%;
   box-sizing: border-box;
   border: solid 1px #151740;
 }
@@ -29,4 +29,16 @@
 .time__hour_disabled:hover {
   cursor: default;
   background-color: #151740;
+}
+
+@media screen and (max-width: 570px) {
+  .time__hour {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .time__hour {
+    font-size: 10px;
+  }
 }

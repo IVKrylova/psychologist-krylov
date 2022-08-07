@@ -41,3 +41,15 @@
 .calendar__timing_hidden {
   display: none;
 }
+
+@media screen and (max-width: 570px) {
+  .calendar {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .calendar {
+    font-size: 14px;
+  }
+}

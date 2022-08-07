@@ -32,4 +32,9 @@
     right: 0;
     top: -32px;
   }
+
+  .button-close_place_popup-with-form {
+    top: 20px;
+    right: 20px;
+  }
 }

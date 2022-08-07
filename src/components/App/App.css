@@ -4,6 +4,8 @@
   flex-direction: column;
   max-width: 1180px;
   margin: 0 auto;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 
 .site-background {
