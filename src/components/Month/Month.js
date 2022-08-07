@@ -2,7 +2,7 @@ import Day from '../Day/Day';
 import { getArrayOfDays } from '../../utils/utils';
 import './Month.css';
 
-function Month(props) {
+const Month = props => {
   // получаем массив с днями
   const days = getArrayOfDays(props.amountOfDays, props.firstDayOfMonth);
 

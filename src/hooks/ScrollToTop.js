@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
-function ScrollToTop(props) {
+const ScrollToTop = props => {
   const location = useLocation();
 
   // скролл при изменении маршрута

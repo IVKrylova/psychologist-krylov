@@ -1,4 +1,3 @@
-import React from 'react';
 import Section from '../Section/Section';
 import PrivacyPolicyItem from '../PrivacyPolicyItem/PrivacyPolicyItem';
 import HomeButton from '../HomeButton/HomeButton';
@@ -7,7 +6,7 @@ import PrivacyPolicyList from '../PrivacyPolicyList/PrivacyPolicyList';
 import { privacyPolicy } from '../../utils/content';
 import './PrivacyPolicy.css';
 
-function PrivacyPolicy(props) {
+const PrivacyPolicy = props => {
   return (
     <Section classNameSection="privacy-policy">
       <h3 className="privacy-policy__title">

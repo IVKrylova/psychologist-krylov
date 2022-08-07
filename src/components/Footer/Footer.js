@@ -1,7 +1,7 @@
 import { footer } from '../../utils/content';
 import './Footer.css';
 
-function Footer(props) {
+const Footer = props => {
   return (
     <footer className="footer">
       <h4 className="footer__title">

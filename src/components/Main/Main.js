@@ -1,4 +1,3 @@
-import React from 'react';
 import Problem from '../Problem/Problem';
 import AboutMe from '../AboutMe/AboutMe';
 import WorkFormat from '../WorkFormat/WorkFormat';
@@ -9,7 +8,7 @@ import Appointment from '../Appointment/Appointment';
 import Section from '../Section/Section';
 import { sectionProblem } from '../../utils/content';
 
-function Main(props) {
+const Main = props => {
   return (
     <main className="content">
       <AboutMe

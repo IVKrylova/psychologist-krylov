@@ -1,6 +1,6 @@
-function Diploma(props) {
+const Diploma = props => {
   // обработчик клика по диплому
-  function handleClick() {
+  const handleClick = _ => {
     props.onDiplomaClick(props);
   }
 

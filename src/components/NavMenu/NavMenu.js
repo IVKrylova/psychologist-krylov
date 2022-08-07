@@ -5,7 +5,7 @@ import iconMenu from '../../images/header-menu.png';
 import { navMenu } from '../../utils/content';
 import './NavMenu.css';
 
-function NavMenu(props) {
+const NavMenu = props => {
   return (
     <Section classNameSection="nav-menu">
       <nav className={`menu ${props.isMenuOpen ? 'menu_visible' : ''}`}>

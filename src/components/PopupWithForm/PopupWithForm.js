@@ -1,10 +1,10 @@
 import ButtonClose from '../ButtonClose/ButtonClose';
 import Message from '../Message/Message';
-import { sectionAppointment, popupWithForm } from '../../utils/content';
 import Form from '../Form/Form';
+import { sectionAppointment, popupWithForm } from '../../utils/content';
 import '../Popup/Popup.css';
 
-function PopupWithForm(props) {
+const PopupWithForm = props => {
   // модификатор для класса popup
   const classModifier = props.isOpenPopupWithForm ? 'popup_opened': '';
 

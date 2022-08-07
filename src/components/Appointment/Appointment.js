@@ -1,11 +1,11 @@
+import { Link } from 'react-router-dom';
 import Section from '../Section/Section';
 import Form from '../Form/Form';
 import Message from '../Message/Message';
 import { sectionAppointment } from '../../utils/content';
 import './Appointment.css';
-import { Link } from 'react-router-dom';
 
-function Appointment(props) {
+const Appointment = props => {
   return (
     <Section classNameSection="appointment">
       <h2 className="section__title section__title_place_appointment">

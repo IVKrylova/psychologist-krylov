@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Cookies from 'js-cookie';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -8,15 +10,13 @@ import Popup from '../Popup/Popup';
 import CookiesNotification from '../CookiesNotification/CookiesNotification';
 import PrivacyPolicy from '../PrivacyPolicy/PrivacyPolicy';
 import Calendar from '../Calendar/Calendar';
+import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import { mainApi } from '../../utils/mainApi';
 import { COOKIES_NAME } from '../../utils/constants';
 import { diplomas, problems } from '../../utils/content';
-import Cookies from 'js-cookie';
-import { Route, Switch } from 'react-router-dom';
-import { mainApi } from '../../utils/mainApi';
 import './App.css';
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
 
-function App() {
+const App = _ => {
   // стейты разворачивающегося меню
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // стейты блока в фокусе
@@ -56,12 +56,13 @@ function App() {
 
   // установка языка страницы при первой загрузке
   useEffect(_=> {
-    if(navigator.language === 'ru-RU' ||
+    if (
+      navigator.language === 'ru-RU' ||
       navigator.language === 'ru-Ru' ||
       navigator.language === 'ru' ||
       navigator.language === 'RU' ||
-      navigator.language === 'Ru')
-    {
+      navigator.language === 'Ru'
+    ) {
       setLanguage('Ru');
     } else {
       setLanguage('En');
@@ -225,18 +226,20 @@ function App() {
       // отправляем сообщение на почту
       mainApi.sendDataFromCalendar(props.day, props.month, props.time, props.name, props.phone, props.type)
     ])
-        .then(([appointment, info]) => {
-          setMessage(info);
-          const { day, month, time } = appointment;
-          // добавляем новую запись в localstorage
-          const calendarEntries = JSON.parse(localStorage.calendarEntries).push({ day, month, time });
-          localStorage.setItem('calendarEntries', JSON.stringify(calendarEntries));
-          setIsSentFromCalendar(true);
-        })
-        .catch(err => {
-          console.log(err);
-          setMessage('Что-то пошло не так...');
-        });
+      .then(([appointment, info]) => {
+        setMessage(info);
+
+        const { day, month, time } = appointment;
+        // добавляем новую запись в localstorage
+        const calendarEntries = JSON.parse(localStorage.calendarEntries).push({ day, month, time });
+
+        localStorage.setItem('calendarEntries', JSON.stringify(calendarEntries));
+        setIsSentFromCalendar(true);
+      })
+      .catch(err => {
+        console.log(err);
+        setMessage('Что-то пошло не так...');
+      });
   }
 
   return (

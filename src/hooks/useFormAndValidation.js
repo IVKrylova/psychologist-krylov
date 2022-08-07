@@ -1,6 +1,6 @@
 import {useState, useCallback} from 'react';
 
-export function useFormAndValidation() {
+export const useFormAndValidation = _ => {
   // хуки состояния значения инпутов
   const [ values, setValues ] = useState({});
   // хуки состояния ошибок инпутов
@@ -25,4 +25,3 @@ export function useFormAndValidation() {
 
   return { values, handleChange, errors, isValid, resetForm, setValues, setIsValid, setErrors };
 }
-

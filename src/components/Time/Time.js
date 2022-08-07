@@ -4,7 +4,7 @@ import { getPastTime } from '../../utils/utils';
 import { TIME, INACTIVE_HOURS } from '../../utils/constants';
 import './Time.css';
 
-function Time(props) {
+const Time = props => {
   // стейт занятого времени
   const [takenTime, setTakenTime] = useState('');
   // стейт прошедшего времени

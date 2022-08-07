@@ -10,7 +10,7 @@ import { buttonSignUp } from '../../utils/content';
 import './Form.css';
 import '../Link/Link.css';
 
-function Form(props) {
+const Form = props => {
   // запускаем валидацию формы
   const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
   // стейт токена из captcha
@@ -28,7 +28,7 @@ function Form(props) {
   }
 
   // обраотчик формы
-  function handleSubmit(evt) {
+  const handleSubmit = evt => {
     // запрещаем браузеру переходить по адресу формы
     evt.preventDefault();
 

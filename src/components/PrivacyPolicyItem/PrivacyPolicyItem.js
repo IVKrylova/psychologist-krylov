@@ -1,6 +1,6 @@
 import './PrivacyPolicyItem.css';
 
-function PrivacyPolicyItem(props) {
+const PrivacyPolicyItem = props => {
   return (
     <li>
       <p className="privacy-policy__text">

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import Section from '../Section/Section';
 import Month from '../Month/Month';
-import { calendar } from '../../utils/content';
-import { getMonth, getPastDays } from '../../utils/utils';
-import { mainApi } from '../../utils/mainApi';
-import './Calendar.css';
 import Time from '../Time/Time';
 import Message from '../Message/Message';
+import { mainApi } from '../../utils/mainApi';
+import { calendar } from '../../utils/content';
+import { getMonth, getPastDays } from '../../utils/utils';
+import './Calendar.css';
 
-function Calendar(props) {
+const Calendar = props => {
   // стейты данных в календаре
   const [calendarEntries, setCalendarEntries] = useState([]);
   // текущая дата
@@ -21,7 +21,8 @@ function Calendar(props) {
   const currentMonth = getMonth(data.getFullYear(), numberOfCurrentMonth);
   // данные о следующем месяце
   const nextMonth = data.getMonth() + 1 === 11
-    ? getMonth(data.getFullYear() + 1, 11) : getMonth(data.getFullYear(), data.getMonth() + 1);
+    ? getMonth(data.getFullYear() + 1, 11)
+    : getMonth(data.getFullYear(), data.getMonth() + 1);
   // модификатор для первого месяца
   const modifierFirstMonth = !props.isFirstMonthChecked ? 'month_hidden' : '';
   // модификатор для второго месяца
@@ -31,9 +32,13 @@ function Calendar(props) {
   // модификатор для названия второго месяца
   const modifierNameSecondMonth = props.isSecondMonthChecked ? 'calendar__month-name_selected' : '';
   // название первого месяца
-  const nameFirstMonth = props.language === 'Ru' ? calendar.Ru.year[numberOfCurrentMonth] : calendar.En.year[numberOfCurrentMonth];
+  const nameFirstMonth = props.language === 'Ru'
+    ? calendar.Ru.year[numberOfCurrentMonth]
+    : calendar.En.year[numberOfCurrentMonth];
   // название второго месяца
-  const nameSecondtMonth = props.language === 'Ru' ? calendar.Ru.year[numberOfNextMonth] : calendar.En.year[numberOfNextMonth];
+  const nameSecondtMonth = props.language === 'Ru'
+    ? calendar.Ru.year[numberOfNextMonth]
+    : calendar.En.year[numberOfNextMonth];
   // получаем массив с прошедшими днями
   const pastDays = getPastDays();
 

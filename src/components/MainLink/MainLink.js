@@ -1,6 +1,6 @@
 import './MainLink.css';
 
-function MainLink() {
+const MainLink = _ => {
   return (
     <a className="privacy-policy__link" href="https://www.alekseykrylov.ru">
       https://www.alekseykrylov.ru

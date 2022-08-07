@@ -6,7 +6,7 @@ import { aboutMe, buttonSignUp } from '../../utils/content';
 import './AboutMe.css';
 import '../Link/Link.css';
 
-function AboutMe(props) {
+const AboutMe = props => {
   return (
     <Section classNameSection="about-me">
       <div className="about-me__description">

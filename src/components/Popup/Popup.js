@@ -1,7 +1,7 @@
 import ButtonClose from '../ButtonClose/ButtonClose';
 import './Popup.css';
 
-function Popup(props) {
+const Popup = props => {
   return (
     <section className={`popup popup_background_opacity ${Boolean(props.diploma.img) ? 'popup_opened' : ''}`}>
       <div className="popup__diploma">

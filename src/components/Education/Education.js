@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import { buttonMore } from '../../utils/content';
 import './Education.css';
 
-function Education(props) {
+const Education = props => {
   // текст кнопки
   const buttonText = props.language === 'Ru' ?
     (props.isVisibleDiploma ? buttonMore.Ru[1] : buttonMore.Ru[0]) :

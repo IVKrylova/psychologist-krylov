@@ -1,6 +1,6 @@
 import './Problem.css';
 
-function Problem(props) {
+const Problem = props => {
   return (
     <li className="problems__item">
       <img src={props.img} alt={props.title} className="problems__icon" />

@@ -3,7 +3,7 @@ import Section from '../Section/Section';
 import { sectionPrice } from '../../utils/content';
 import './Price.css';
 
-function Price(props) {
+const Price = props => {
   return (
     <Section classNameSection="price">
       <h2 className="section__title section__title_place_price">

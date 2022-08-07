@@ -3,7 +3,7 @@ import { cookiesNotification } from '../../utils/content';
 import './CookiesNotification.css';
 import '../Link/Link.css';
 
-function CookiesNotification(props) {
+const CookiesNotification = props => {
   return (
     <section className={`notification ${props.isNotificationOpen ? 'notification_opened' : ''}`}>
       <p className="notification__text">

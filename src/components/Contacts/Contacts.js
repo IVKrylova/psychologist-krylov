@@ -1,11 +1,11 @@
+import Section from '../Section/Section';
+import { sectionContacts } from '../../utils/content';
 import iconPhone from '../../images/phone.svg';
 import iconEmail from '../../images/email.svg';
 import iconSkype from '../../images/skype.svg';
-import Section from '../Section/Section';
-import { sectionContacts } from '../../utils/content';
 import './Contacts.css';
 
-function Contacts(props) {
+const Contacts = props => {
   return (
     <Section classNameSection="contacts">
       <h2 className="section__title section__title_place_contacts">

@@ -1,6 +1,6 @@
 import './FormInput.css';
 
-function FormInput(props) {
+const FormInput = props => {
   return (
     <input
       type={props.type}

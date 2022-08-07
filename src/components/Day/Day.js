@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { defineTakenDay } from '../../utils/utils';
 import './Day.css';
 
-function Day(props) {
+const Day = props => {
   // стейт записей на день
   const [isTakenDay, setIsTakenDay] = useState(false);
   // стейт прошедшего дня

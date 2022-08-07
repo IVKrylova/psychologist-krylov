@@ -2,7 +2,7 @@ import Section from '../Section/Section';
 import { sectionWorkFormat } from '../../utils/content';
 import './WorkFormat.css';
 
-function WorkFormat(props) {
+const WorkFormat = props => {
   return (
     <Section
       classNameSection="work-format"

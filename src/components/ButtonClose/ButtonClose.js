@@ -1,6 +1,6 @@
 import './ButtonClose.css';
 
-function ButtonClose(props) {
+const ButtonClose = props => {
   return (
     <button type="button" className={`button-close ${props.classModifier}`} aria-label="Кнопка закрыть" onClick={props.onClose}></button>
   );

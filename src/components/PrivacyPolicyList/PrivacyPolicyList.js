@@ -1,6 +1,6 @@
 import './PrivacyPolicyList.css';
 
-function PrivacyPolicyList(props) {
+const PrivacyPolicyList = props => {
   return (
     <ul className="privacy-policy__list">
       {props.children}
