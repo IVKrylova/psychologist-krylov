@@ -36,12 +36,12 @@ function Time(props) {
       : calendar.En.time[calendar.Ru.time.indexOf(props.hour)];
     // получаем название текущего месяца на русском
     const todayMonthRu = props.language === 'Ru'
-      ? localStorage.todayMont
-      : calendar.Ru.year[calendar.En.year.indexOf(localStorage.todayMont)];
+      ? localStorage.todayMonth
+      : calendar.Ru.year[calendar.En.year.indexOf(localStorage.todayMonth)];
     // получаем название текущего месяца на английском
     const todayMonthEn = props.language === 'En'
-      ? localStorage.todayMont
-      : calendar.En.year[calendar.Ru.year.indexOf(localStorage.todayMont)];
+      ? localStorage.todayMonth
+      : calendar.En.year[calendar.Ru.year.indexOf(localStorage.todayMonth)];
     // получаем текущий час
     const currentTime = getPastTime();
     // получаем индекс текущего часа для английского языка
@@ -64,7 +64,7 @@ function Time(props) {
     // проверяем прошедшее время текущего дня
     pastHours && pastHours.forEach(el => {
       ((todayMonthEn === props.selectedDay.month || todayMonthRu === props.selectedDay.month)
-        && localStorage.todayDay === props.selectedDay.day
+        && localStorage.todayDay === props.selectedDay.day.toString()
         && props.hour === el)
           && setPastTime(true);
     });

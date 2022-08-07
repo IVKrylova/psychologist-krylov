@@ -54,7 +54,8 @@ function Calendar(props) {
   // устанавливаем текущий день
   useEffect(_ => {
     const today = new Date();
-    localStorage.setItem('todayDay', today.getDay());
+
+    localStorage.setItem('todayDay', today.getDate());
     localStorage.setItem('todayMonth', props.language === 'Ru' ? calendar.Ru.year[today.getMonth()] : calendar.En.year[today.getMonth()]);
   }, [props.language]);
 
