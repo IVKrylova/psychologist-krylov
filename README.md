@@ -5,7 +5,6 @@
 ## Описание
 Проект - сайт психолога Алексея Крылова.<br>
 Моя задача - обновить дизайн, актуализировать информацию, переписать сайт с PHP на React, добавить англоязычную версию сайта и возможность записи на консультацию через каландарь.
-<br>
 
 ## Используемые технологии
 1. HTML5, CSS3
@@ -13,26 +12,21 @@
 3. Флексбокс-верстка, Grid-css, отзывчивая верстка
 4. JS, React
 5. MongoDB
-<br>
 
 ## Инструменты
 1. Figma
 2. Яндекс.Метрика
 3. Google Analytics
 4. reCAPTCHA
-<br>
 
 ## Дизайн
 Макет в [Figma](https://www.figma.com/proto/CqsSmGp01qroaUPL8OrWSm/Untitled?page-id=0%3A1&node-id=204%3A4&viewport=-625%2C484%2C0.5&scaling=min-zoom)
-<br>
 
 ## Планы по доработке проекта
 * Перенести сайт на VDS.
-* Зарешить настройку reCARTCHA.
+* Завершить настройку reCARTCHA.
 * Подключить Яндекс.Метрика и Google Analytics.
 * Написать robots.txt
-<br>
-
 ## Демо
 Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
 Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
