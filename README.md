@@ -26,7 +26,7 @@
 * Перенести сайт на VDS.
 * Завершить настройку reCARTCHA.
 * Подключить Яндекс.Метрика и Google Analytics.
-* Написать robots.txt
+* Разобраться с индексированием приложения
 ## Демо
 Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
 Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
