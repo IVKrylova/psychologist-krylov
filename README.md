@@ -2,6 +2,11 @@
 Версия 3.<br>
 Версию 2 можно посмотреть [здесь](https://github.com/IVKrylova/psychologist-Krylov_version2), версию 1 - [здесь](https://github.com/IVKrylova/psychologist-Krylov_version1).
 
+## Демо
+Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
+Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
+<br>
+
 ## Описание
 Проект - сайт психолога Алексея Крылова.<br>
 Моя задача - обновить дизайн, актуализировать информацию, переписать сайт с PHP на React, добавить англоязычную версию сайта и возможность записи на консультацию через каландарь.
@@ -27,10 +32,6 @@
 * Завершить настройку reCARTCHA.
 * Подключить Яндекс.Метрика и Google Analytics.
 * Написать robots.txt
-## Демо
-Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
-Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
-<br>
 
 ### Авторское право
 Автор иконок на сайте: [Freepik](https://www.freepik.com/) from [Flaticon](https://www.flaticon.com/)
