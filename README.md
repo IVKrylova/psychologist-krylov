@@ -5,6 +5,7 @@
 ## Демо
 Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
 Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
+Сайт развернут на VDS по адресу https://alekseykrylov/ru
 
 ## Описание
 Проект - сайт психолога Алексея Крылова.<br>
@@ -27,7 +28,7 @@
 Макет в [Figma](https://www.figma.com/proto/CqsSmGp01qroaUPL8OrWSm/Untitled?page-id=0%3A1&node-id=204%3A4&viewport=-625%2C484%2C0.5&scaling=min-zoom)
 
 ## Планы по доработке проекта
-* Перенести сайт на VDS.
+* Связать фронтенд и бэкенд в рамках одного проекта.
 * Завершить настройку reCARTCHA.
 * Подключить Яндекс.Метрика и Google Analytics.
 * Разобраться с индексированием приложения
