@@ -24,4 +24,4 @@ yarn-error.log*
 
 # metrics
 /public
-/utils/metrics.js
+/src/utils/metrics.js
