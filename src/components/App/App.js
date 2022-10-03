@@ -14,7 +14,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import { mainApi } from '../../utils/mainApi';
 import { COOKIES_NAME } from '../../utils/constants';
 import { diplomas, problems } from '../../utils/content';
-import { counterYandexMetrika } from '../../utils/metriks';
+import { counterYandexMetrika } from '../../utils/metrics';
 import './App.css';
 
 const App = _ => {
