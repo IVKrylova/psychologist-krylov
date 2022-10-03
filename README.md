@@ -5,7 +5,7 @@
 ## Демо
 Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
 Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
-Сайт развернут на VDS по адресу https://alekseykrylov/ru
+Сайт развернут на VDS по адресу https://alekseykrylov.ru
 
 ## Описание
 Проект - сайт психолога Алексея Крылова.<br>
