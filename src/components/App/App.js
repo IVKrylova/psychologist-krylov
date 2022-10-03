@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Cookies from 'js-cookie';
 import Header from '../Header/Header';
@@ -14,6 +14,7 @@ import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import { mainApi } from '../../utils/mainApi';
 import { COOKIES_NAME } from '../../utils/constants';
 import { diplomas, problems } from '../../utils/content';
+import { counterYandexMetrika } from '../../utils/metriks';
 import './App.css';
 
 const App = _ => {
@@ -54,6 +55,15 @@ const App = _ => {
   const [typeConsultation, setTypeConsyltation] = useState('');
   // стейт формы в календаре
   const [isSentFromCalendar, setIsSentFromCalendar] = useState(false);
+
+  // получаем текущий URL
+  const location = useLocation();
+  const currentUrl = location.pathname;
+
+  // вызов функции счетчика Яндекс.Метрики при изменении url
+  useEffect(_ => {
+    window.ym(counterYandexMetrika, 'hit', window.location.href);
+  }, currentUrl);
 
   // установка языка страницы при первой загрузке
   useEffect(_=> {
@@ -355,4 +365,4 @@ const App = _ => {
   );
 }
 
-export default App;
+export default withRouter(App);
