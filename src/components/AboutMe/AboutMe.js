@@ -21,6 +21,7 @@ const AboutMe = props => {
             classNameButton="about-me__button"
             buttonType="button"
             buttonText={props.language === 'Ru' ? buttonSignUp.Ru : buttonSignUp.En}
+            onClickButton={props.onClickButtonSignUp}
           />
         </NavHashLink>
       </div>

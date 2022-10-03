@@ -13,6 +13,7 @@ const Main = props => {
     <main className="content">
       <AboutMe
         language={props.language}
+        onClickButtonSignUp={props.onClickButtonSignUp}
       />
       <Education
         diplomas={props.diplomas}
@@ -66,6 +67,7 @@ const Main = props => {
         isSent={props.isSent}
         language={props.language}
         message={props.message}
+        isAppointmentFocused={props.isAppointmentFocused}
       />
       <Contacts
         language={props.language}

@@ -23,6 +23,7 @@ const App = _ => {
   const [isAboutMeFocused, setIsAboutMeFocused] = useState(false);
   const [isProblemsFocused, setIsProblemsFocused] = useState(false);
   const [isWorkFormatFocused, setIsWorkFormatFocused] = useState(false);
+  const [isAppointmentFocused, setIsAppointmentFocused] = useState(false);
   // стейт дипломов в блоке об образовании
   const [isVisibleDiploma, setIsVisibleDiploma] = useState(false);
   // стейт выбранного диплома
@@ -90,6 +91,7 @@ const App = _ => {
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
     setIsMenuOpen(false);
+    setIsAppointmentFocused(false);
   }
 
   // обработчик изменения стилей при переходу к якорю Problems
@@ -98,6 +100,7 @@ const App = _ => {
     setIsProblemsFocused(true);
     setIsWorkFormatFocused(false);
     setIsMenuOpen(false);
+    setIsAppointmentFocused(false);
   }
 
   // обработчик изменения стилей при переходу к якорю WorkFormat
@@ -106,7 +109,17 @@ const App = _ => {
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(true);
     setIsMenuOpen(false);
+    setIsAppointmentFocused(false);
   }
+
+    // обработчик изменения стилей при переходу к якорю Appointment
+    const handleAddPaddingAppointment = _ => {
+      setIsAboutMeFocused(false);
+      setIsProblemsFocused(false);
+      setIsWorkFormatFocused(false);
+      setIsMenuOpen(false);
+      setIsAppointmentFocused(true);
+    }
 
    // обработчик изменения стилей при переходу к остальным якорям
   const handleDeletePaddingAnchor = _ => {
@@ -114,6 +127,7 @@ const App = _ => {
     setIsProblemsFocused(false);
     setIsWorkFormatFocused(false);
     setIsMenuOpen(false);
+    setIsAppointmentFocused(false);
   }
 
   // обработчик клика на кнопку "Больше об образовании"
@@ -282,6 +296,8 @@ const App = _ => {
               isSent={isSent}
               language={language}
               message={message}
+              onClickButtonSignUp={handleAddPaddingAppointment}
+              isAppointmentFocused={isAppointmentFocused}
             />
             </Route>
             <Route path="/calendar">

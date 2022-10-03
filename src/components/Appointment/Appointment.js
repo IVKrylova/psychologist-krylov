@@ -7,7 +7,10 @@ import './Appointment.css';
 
 const Appointment = props => {
   return (
-    <Section classNameSection="appointment">
+    <Section
+      classNameSection="appointment"
+      isAppointmentFocused={props.isAppointmentFocused}
+    >
       <h2 className="section__title section__title_place_appointment">
         {props.language === 'Ru' ? sectionAppointment.Ru.title : sectionAppointment.En.title}
       </h2>
