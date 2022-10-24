@@ -11,28 +11,21 @@ import './Form.css';
 import '../Link/Link.css';
 
 const Form = props => {
-  // запускаем валидацию формы
   const { values, handleChange, errors, isValid, resetForm } = useFormAndValidation();
-  // стейт токена из captcha
   const [captchaToken, setCaptchaToken] = useState(null);
   const captchaRef = useRef(captchaToken);
-  // получаем текущий URL
   const location = useLocation();
   const currentUrl = location.pathname;
 
-  // функция проверки токена из captcha
   const verify = _ => {
     captchaRef.current.getResponse()
       .then(res => setCaptchaToken(res))
       .catch(err => console.log(err));
   }
 
-  // обраотчик формы
   const handleSubmit = evt => {
-    // запрещаем браузеру переходить по адресу формы
     evt.preventDefault();
 
-    // передаём значения управляемых компонентов во внешний обработчик
     if (currentUrl === '/') {
       props.onMakeAppointment({
         name: values.name,
@@ -52,7 +45,6 @@ const Form = props => {
     }
   }
 
-  // сброс значений инпутов формы
   useEffect(_ => {
     resetForm();
   }, [props.isSent, props.isSentFromCalendar]);

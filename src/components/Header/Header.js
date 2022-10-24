@@ -4,7 +4,6 @@ import { header } from '../../utils/content';
 import './Header.css';
 
 const Header = props => {
-  // модификаторы класса активного языка страницы
   const classModifierRu = props.language === 'Ru' ? 'header__lang-link_focused' : '';
   const classModifierEn = props.language === 'En' ? 'header__lang-link_focused' : '';
 

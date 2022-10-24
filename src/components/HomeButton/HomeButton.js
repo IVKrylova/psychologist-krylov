@@ -2,10 +2,8 @@ import { useHistory } from 'react-router-dom';
 import Button from '../Button/Button';
 
 const HomeButton = props => {
-  // доступ к истории
   const history = useHistory();
 
-  // обработчик клика на копку На главную
   const handleClickHomeButton = _ => {
     history.push('/');
   }

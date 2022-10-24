@@ -9,40 +9,26 @@ import { getMonth, getPastDays } from '../../utils/utils';
 import './Calendar.css';
 
 const Calendar = props => {
-  // стейты данных в календаре
   const [calendarEntries, setCalendarEntries] = useState([]);
-  // текущая дата
   const data = new Date();
-  // номер текущего месяца
   const numberOfCurrentMonth = data.getMonth();
-  // номер следующего месяца
   const numberOfNextMonth = data.getMonth() === 11 ? 0 : data.getMonth() + 1;
-  // данные о текущем месяце
   const currentMonth = getMonth(data.getFullYear(), numberOfCurrentMonth);
-  // данные о следующем месяце
   const nextMonth = data.getMonth() + 1 === 11
     ? getMonth(data.getFullYear() + 1, 11)
     : getMonth(data.getFullYear(), data.getMonth() + 1);
-  // модификатор для первого месяца
   const modifierFirstMonth = !props.isFirstMonthChecked ? 'month_hidden' : '';
-  // модификатор для второго месяца
   const modifierSecondMonth = !props.isSecondMonthChecked ? 'month_hidden' : '';
-  // модификатор для названия первого месяца
   const modifierNameFirstMonth = props.isFirstMonthChecked ? 'calendar__month-name_selected' : '';
-  // модификатор для названия второго месяца
   const modifierNameSecondMonth = props.isSecondMonthChecked ? 'calendar__month-name_selected' : '';
-  // название первого месяца
   const nameFirstMonth = props.language === 'Ru'
     ? calendar.Ru.year[numberOfCurrentMonth]
     : calendar.En.year[numberOfCurrentMonth];
-  // название второго месяца
   const nameSecondtMonth = props.language === 'Ru'
     ? calendar.Ru.year[numberOfNextMonth]
     : calendar.En.year[numberOfNextMonth];
-  // получаем массив с прошедшими днями
   const pastDays = getPastDays();
 
-  // загрузка данных о записи при открытии страницы
   useEffect(_ => {
     props.setMessage('');
     mainApi.getAppointments()
@@ -56,7 +42,6 @@ const Calendar = props => {
       });
   }, []);
 
-  // устанавливаем текущий день
   useEffect(_ => {
     const today = new Date();
 

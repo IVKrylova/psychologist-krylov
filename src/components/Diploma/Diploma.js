@@ -1,5 +1,4 @@
 const Diploma = props => {
-  // обработчик клика по диплому
   const handleClick = _ => {
     props.onDiplomaClick(props);
   }

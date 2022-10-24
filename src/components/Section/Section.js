@@ -1,7 +1,6 @@
 import './Section.css';
 
 const Section = props => {
-  // классы секций
   const classProblems = props.isProblemsFocused ? 'section_focused' : '';
   const classWorkFormat = props.isWorkFormatFocused ? 'section_focused' : '';
   const classAppointment = props.isAppointmentFocused ? 'section_focused' : '';

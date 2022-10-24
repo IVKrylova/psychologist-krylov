@@ -7,7 +7,6 @@ class MainApi {
     this.headers = options.headers;
   }
 
-  // метод отправки заявки через форму
   sendDataFromForm(name, phone, type) {
     return fetch(`${this.baseUrl}/request`, {
       method: 'POST',
@@ -17,7 +16,6 @@ class MainApi {
       .then(checkResponse);
   }
 
-  // метод загрузки данных для календаря
   getAppointments() {
     return fetch(`${this.baseUrl}/calendar`, {
       headers: this.headers,
@@ -25,7 +23,6 @@ class MainApi {
       .then(checkResponse);
   }
 
-  // метод записи через календарь
   signUpInCalendar(day, month, time, name, phone, type) {
     return fetch(`${this.baseUrl}/calendar`, {
       method: 'POST',
@@ -35,7 +32,6 @@ class MainApi {
       .then(checkResponse);
   }
 
-  // метод отправки заявки из календаря на почту
   sendDataFromCalendar(day, month, time, name, phone, type) {
     return fetch(`${this.baseUrl}/signup`, {
       method: 'POST',
@@ -46,5 +42,4 @@ class MainApi {
   }
 }
 
-// создание экземпляра класса MainApi
 export const mainApi = new MainApi(MAIN_OPTIONS);

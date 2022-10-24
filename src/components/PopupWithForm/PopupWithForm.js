@@ -5,7 +5,6 @@ import { sectionAppointment, popupWithForm } from '../../utils/content';
 import '../Popup/Popup.css';
 
 const PopupWithForm = props => {
-  // модификатор для класса popup
   const classModifier = props.isOpenPopupWithForm ? 'popup_opened': '';
 
   return (
