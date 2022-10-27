@@ -30,7 +30,7 @@ const Form = props => {
       props.onMakeAppointment({
         name: values.name,
         phone: values.phone,
-        type: 'не задано' || values.type,
+        type: values.type || 'не задано',
       });
     }
     if (currentUrl === '/calendar') {

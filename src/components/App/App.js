@@ -45,7 +45,7 @@ const App = _ => {
 
   useEffect(_ => {
     window.ym(counterYandexMetrika, 'hit', window.location.href);
-  }, currentUrl);
+  }, [currentUrl]);
 
   useEffect(_=> {
     if (
