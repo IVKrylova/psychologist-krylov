@@ -1,10 +1,8 @@
 // имя cookies для соглащения о cookies
 export const COOKIES_NAME = 'visit';
 
-// URL для обращения к собственной БД
-//export const MAIN_URL = 'https://api.alekseykrylov.ru';
-export const MAIN_URL = 'http://localhost:3001';
-// объект с настройками для собственной API
+// настройки собственной API
+export const MAIN_URL = 'https://api.alekseykrylov.ru';
 export const MAIN_OPTIONS = {
   baseUrl: MAIN_URL,
   headers: {
