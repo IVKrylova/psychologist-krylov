@@ -206,7 +206,7 @@ const App = _ => {
       mainApi.sendDataFromCalendar(props.day, props.month, props.time, props.name, props.phone, props.type)
     ])
       .then(([appointment, info]) => {
-        setMessage(info);
+        if (info) setMessage('Ваша заявка отправлена! Спасибо');
 
         const { day, month, time } = appointment;
         const calendarEntries = JSON.parse(localStorage.calendarEntries).push({ day, month, time });
@@ -221,8 +221,7 @@ const App = _ => {
   }
 
   return (
-    <div className="site-background"
-      onClick={handleBackgroundClose}>
+    <div className="site-background" onClick={handleBackgroundClose}>
       <div className="page">
         <Helmet htmlAttributes={{ lang : language === 'Ru' ? 'ru' : 'en' }} />
         <Header
