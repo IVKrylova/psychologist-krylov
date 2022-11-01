@@ -4,7 +4,7 @@
 
 ## Демо
 Сайт находится в разработке.<br>
-Сайт развернут на VDS по адресу https://alekseykrylov.ru
+Сайт развернут на VDS по адресу https://alekseykrylov.ru <br>
 Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
 
 ## Описание
