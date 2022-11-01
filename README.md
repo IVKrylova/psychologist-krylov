@@ -3,9 +3,9 @@
 Версию 2 можно посмотреть [здесь](https://github.com/IVKrylova/psychologist-Krylov_version2), версию 1 - [здесь](https://github.com/IVKrylova/psychologist-Krylov_version1).
 
 ## Демо
-Пока сайт находится в разработке, посмотреть его можно на [GitHub Pages](https://ivkrylova.github.io/psychologist-krylov/).<br>
-Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
+Сайт находится в разработке.<br>
 Сайт развернут на VDS по адресу https://alekseykrylov.ru
+Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
 
 ## Описание
 Проект - сайт психолога Алексея Крылова.<br>
