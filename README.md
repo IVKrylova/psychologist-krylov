@@ -1,11 +1,9 @@
 # Сайт психолога Алексея Крылова
-Версия 3.<br>
-Версию 2 можно посмотреть [здесь](https://github.com/IVKrylova/psychologist-Krylov_version2), версию 1 - [здесь](https://github.com/IVKrylova/psychologist-Krylov_version1).
+Версия 3<br>
+Версию 2 можно посмотреть [здесь](https://github.com/IVKrylova/psychologist-Krylov_version2), версию 1 - [здесь](https://github.com/IVKrylova/psychologist-Krylov_version1)<br>
 
 ## Демо
-Сайт находится в разработке.<br>
-Сайт развернут на VDS по адресу https://alekseykrylov.ru <br>
-Посмотреть бэкенд сайта можно [здесь](https://github.com/IVKrylova/psychologist-krylov-api).<br>
+Скринкаст можно посмотреть [здесь](https://youtu.be/9SePLOqWZF8)
 
 ## Описание
 Проект - сайт психолога Алексея Крылова.<br>
@@ -28,10 +26,10 @@
 Макет в [Figma](https://www.figma.com/proto/CqsSmGp01qroaUPL8OrWSm/Untitled?page-id=0%3A1&node-id=204%3A4&viewport=-625%2C484%2C0.5&scaling=min-zoom)
 
 ## Планы по доработке проекта
-* Проработать ошибку 502 Bad Gateway - оптимизировать приложение, проверить объем памяти на боксе VDS-сервера
-* Завершить настройку reCARTCHA.
-* Подключить Яндекс.Метрика и Google Analytics.
-* Разобраться с индексированием приложения
+* Убрать запись на консультацию через календарь, так как она не приносит достаточно прибыли, чтобы покрывать мощности VDS
+* Перенести сайт с VDS на обычный хостинг
+* Уйти от React к JS из-за проблем с индексированием
+* Провести редизайн
 
 ### Авторское право
 Автор иконок на сайте: [Freepik](https://www.freepik.com/) from [Flaticon](https://www.flaticon.com/)
